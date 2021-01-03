@@ -136,3 +136,9 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# asv
+Django/
+
+# vscode
+settings.json
