@@ -59,3 +59,27 @@ class TemplateBenchmarks:
             t.render(context)
             t.render(context)
             t.render(context)
+
+    def time_template_compilation(self):
+        # Just compile the template, no rendering
+        template.Template(
+            """
+            {% for v in vals %}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+                {{ v }}
+            {% endfor %}
+        """
+        )

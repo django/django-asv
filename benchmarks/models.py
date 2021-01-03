@@ -12,3 +12,7 @@ except RuntimeError:
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
+
+
+class OneField(models.Model):
+    field1 = models.CharField(max_length=100)

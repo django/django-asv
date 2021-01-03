@@ -1,7 +1,7 @@
 import os
 
 import django
-from django.core.management import call_command
+from django.core.management import call_command, CommandError
 
 from .models import Book
 
@@ -14,11 +14,19 @@ except RuntimeError:
 
 def setup():
     call_command("migrate", run_syncdb=True, verbosity=0)
+    try:
+        call_command("loaddata", "initial_data", verbosity=0)
+    except CommandError as exc:
+        # Django 1.10+ raises if the file doesn't exist and not
+        # all benchmarks have files.
+        if 'No fixture named' not in str(exc):
+            raise
 
 
 class ModelBenchmarks:
     def setup(self):
-        self.save_existing = Book.objects.create(id=1, title="Foo")
+        self.save_existing = Book.objects.get(id=1)
+        self.book_count = Book.objects.count()
 
     def teardown(self):
         Book.objects.all().delete()
@@ -34,6 +42,6 @@ class ModelBenchmarks:
             self.save_existing.save()
 
     def time_save_new(self):
-        for i in range(0, 30):
+        for i in range(self.book_count, self.book_count + 30):
             b = Book(id=i, title="Foo")
             b.save()

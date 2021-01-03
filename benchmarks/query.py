@@ -98,3 +98,14 @@ class QueryGetOrCreate:
 
         # ... and this a get.
         Book.objects.get_or_create(id=self.next_id, defaults={"title": "hi"})
+
+
+class QueryValuesList:
+    def setup(self):
+        pass
+
+    def teardown(self):
+        Book.objects.all().delete()
+
+    def time_query_values_list(self):
+        list(Book.objects.values_list('title'))

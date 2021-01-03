@@ -1,0 +1,73 @@
+[
+    {
+         "model": "benchmarks.book",
+         "pk": 1,
+         "fields": {
+            "title": "a"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 2,
+         "fields": {
+            "title": "b"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 3,
+         "fields": {
+            "title": "c"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 4,
+         "fields": {
+            "title": "d"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 5,
+         "fields": {
+            "title": "e"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 6,
+         "fields": {
+            "title": "f"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 7,
+         "fields": {
+            "title": "g"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 8,
+         "fields": {
+            "title": "h"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 9,
+         "fields": {
+            "title": "i"
+        }
+    },
+    {
+         "model": "benchmarks.book",
+         "pk": 10,
+         "fields": {
+            "title": "j"
+        }
+    }
+
+]
