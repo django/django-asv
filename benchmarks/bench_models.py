@@ -19,7 +19,7 @@ def setup():
     except CommandError as exc:
         # Django 1.10+ raises if the file doesn't exist and not
         # all benchmarks have files.
-        if 'No fixture named' not in str(exc):
+        if "No fixture named" not in str(exc):
             raise
 
 

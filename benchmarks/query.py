@@ -3,7 +3,7 @@ import os
 import django
 from django.core.management import call_command
 
-from .models import Book
+from .models import Book, MultiField, Author
 
 try:
     os.environ["DJANGO_SETTINGS_MODULE"] = "benchmarks.settings"
@@ -108,4 +108,82 @@ class QueryValuesList:
         Book.objects.all().delete()
 
     def time_query_values_list(self):
-        list(Book.objects.values_list('title'))
+        list(Book.objects.values_list("title"))
+
+
+class QueryValues:
+    def setup(self):
+        pass
+
+    def teardown(self):
+        Book.objects.all().delete()
+
+    def time_query_values(self):
+        list(Book.objects.values("title"))
+
+
+class QueryValues10000:
+    def setup(self):
+        Book.objects.bulk_create((Book(title="title") for x in range(10000)))
+
+    def teardown(self):
+        Book.objects.all().delete()
+
+    def time_query_values_10000(self):
+        list(Book.objects.values("title"))
+
+
+class QueryUpdate:
+    def setup(self):
+        pass
+
+    def teardown(self):
+        Book.objects.all().delete()
+
+    def time_query_update(self):
+        Book.objects.all().update(title="z")
+
+
+class QuerySelectRelated:
+    def setup(self):
+        pass
+
+    def teardown(self):
+        Book.objects.all().delete()
+
+    def time_query_select_related(self):
+        for i in range(20):
+            list(Book.objects.select_related("author"))
+
+
+class QueryRawDeferred:
+    def setup(self):
+        for i in range(0, 1000):
+            kwargs = {}
+            for j in range(1, 11):
+                kwargs["field%s" % j] = "foobar_%s_%s" % (i, j)
+            MultiField(**kwargs).save()
+
+    def teardown(self):
+        MultiField.objects.all().delete()
+
+    def time_query_raw_deferred(self):
+        list(MultiField.objects.raw("select id from benchmarks_multifield"))
+
+
+class QueryRaw:
+    def setup(self):
+        for i in range(0, 1000):
+            kwargs = {}
+            for j in range(1, 11):
+                kwargs["field%s" % j] = "foobar_%s_%s" % (i, j)
+            MultiField(**kwargs).save()
+
+    def teardown(self):
+        MultiField.objects.all().delete()
+
+    def time_query_raw_deferred(self):
+        list(MultiField.objects.raw("select * from benchmarks_multifield"))
+
+
+

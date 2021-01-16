@@ -139,6 +139,8 @@ cython_debug/
 
 # asv
 Django/
+html/
+results/
 
 # vscode
 settings.json
