@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_exclude",
     "benchmarks.query_benchmarks.query_exists",
     "benchmarks.query_benchmarks.query_in_bulk",
+    "benchmarks.query_benchmarks.query_latest",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
