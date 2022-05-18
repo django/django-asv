@@ -9,10 +9,6 @@ class UrlResolve:
         settings.ROOT_URL_CONF = "url_resolve_flat_i18n_off.urls"
         settings.USE_I8N = False
     
-    def teardown(self):
-        settings.ROOT_URL_CONF = "benchmarks.urls"
-        settings.USE_I8N = True
-    
     def time_i8n_off(self):
         paths = (
         '/user/repo/feature19',
