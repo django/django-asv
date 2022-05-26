@@ -14,6 +14,8 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "benchmarks",
     "benchmarks.query_benchmarks.query_multifield",
+    "benchmarks.template_benchmarks.template_render",
+    "benchmarks.template_benchmarks.template_compilation",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
