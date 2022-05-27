@@ -25,29 +25,7 @@ class L10nRender:
         bench_setup()
         settings.USE_I18N = False
         settings.USE_L10N = True
-        settings.TEMPLATE_DIRS = (
-        os.path.abspath(os.path.join(os.path.dirname(__file__), 'templates')))
         settings.INSTALLED_APPS = ['l10n_render', 'django.contrib.auth', 'django.contrib.contenttypes']
-        settings.TEMPLATES = TEMPLATES = [
-        {
-            'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [
-                    os.path.abspath(os.path.join(os.path.dirname(__file__), 'templates')),
-                ],
-                'APP_DIRS': True,
-                'OPTIONS': {
-                    'context_processors': [
-                        'django.contrib.auth.context_processors.auth',
-                        'django.template.context_processors.debug',
-                        'django.template.context_processors.i18n',
-                        'django.template.context_processors.media',
-                        'django.template.context_processors.static',
-                        'django.template.context_processors.tz',
-                        'django.contrib.messages.context_processors.messages',
-                    ],
-                },
-            },
-        ]
         self.req_object = make_request()
     
     def time_render(self):
