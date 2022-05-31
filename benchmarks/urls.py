@@ -8,7 +8,7 @@ from . import views
 
 
 def generate_filler_patterns(num=1):
-    """ Returns a list of url pattern inputs for garbage views """
+    """Returns a list of url pattern inputs for garbage views"""
     for n in range(num):
         yield re_path(r"".join((r"^", r"x" * 3 * n, r"/$")), views.basic)
 

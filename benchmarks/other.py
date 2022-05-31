@@ -1,8 +1,10 @@
 import os
-from django.db import connection
+
 import django
-from .models import OneField
 from django.core.management import call_command
+from django.db import connection
+
+from .models import OneField
 
 try:
     os.environ["DJANGO_SETTINGS_MODULE"] = "benchmarks.settings"
