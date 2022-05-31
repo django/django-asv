@@ -61,13 +61,13 @@ class FormBenchmarks:
         BookForm({"title": "a"})
 
     def time_selectdatewidget(self):
-        self.widget.get_context('widget', "2020-10-10", {})
-        self.widget.get_context('widget', "2020-10-10", {})
-        self.widget.get_context('widget', "2020-10-10", {})
-        self.widget.get_context('widget', "2020-10-10", {})
-        self.widget.get_context('widget', "2020-10-10", {})
-        self.widget.get_context('widget', "2020-10-10", {})
-        self.widget.get_context('widget', "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
+        self.widget.get_context("widget", "2020-10-10", {})
 
     def time_small_form_render(self):
         str(self.form_render_small)

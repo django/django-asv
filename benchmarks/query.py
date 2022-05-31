@@ -3,7 +3,7 @@ import os
 import django
 from django.core.management import call_command
 
-from .models import Book, MultiField, Author
+from .models import Book, MultiField
 
 try:
     os.environ["DJANGO_SETTINGS_MODULE"] = "benchmarks.settings"
@@ -184,6 +184,3 @@ class QueryRaw:
 
     def time_query_raw_deferred(self):
         list(MultiField.objects.raw("select * from benchmarks_multifield"))
-
-
-
