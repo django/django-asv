@@ -1,14 +1,6 @@
-import os
-
-import django
 from django import forms
-from django.forms.widgets import SelectDateWidget
 
-try:
-    os.environ["DJANGO_SETTINGS_MODULE"] = "benchmarks.settings"
-    django.setup()
-except RuntimeError:
-    pass
+from ...utils import bench_setup
 
 
 class BookForm(forms.Form):
@@ -29,45 +21,11 @@ class BookFormLarge(forms.Form):
     title9 = forms.CharField(max_length=100)
 
 
-class FormBenchmarks:
+class FormRender:
     def setup(self):
-
-        self.form_clean = BookForm({"title": "hi"})
-        self.widget = SelectDateWidget(years=(2020,))
+        bench_setup()
         self.form_render_small = BookForm()
         self.form_render_large = BookFormLarge()
-
-    def time_form_clean(self):
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-        self.form_clean.full_clean()
-
-    def time_create_form(self):
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-        BookForm({"title": "a"})
-
-    def time_selectdatewidget(self):
-        self.widget.get_context("widget", "2020-10-10", {})
-        self.widget.get_context("widget", "2020-10-10", {})
-        self.widget.get_context("widget", "2020-10-10", {})
-        self.widget.get_context("widget", "2020-10-10", {})
-        self.widget.get_context("widget", "2020-10-10", {})
-        self.widget.get_context("widget", "2020-10-10", {})
-        self.widget.get_context("widget", "2020-10-10", {})
 
     def time_small_form_render(self):
         str(self.form_render_small)
