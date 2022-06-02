@@ -5,9 +5,9 @@ on:
   push:
     branches:
       - "main"
-  
+
 jobs:
-  
+
   run_benchmarks:
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +20,6 @@ jobs:
       - name: Install Requirements
         run: pip install -r requirements.txt
       - name: Run Benchmarks
-        run: |- 
+        run: |-
           asv machine --yes
           asv run
