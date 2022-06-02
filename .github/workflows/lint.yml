@@ -7,7 +7,7 @@ on:
       - "main"
 
 jobs:
-  flake8: 
+  flake8:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
       - run: pip install flake8
       - name: flake8
         run: flake8 .
-  
+
   isort:
     runs-on: ubuntu-latest
     steps:
@@ -32,7 +32,7 @@ jobs:
       - run: pip install isort
       - name: isort
         run: isort --check .
-  
+
   black:
     runs-on: ubuntu-latest
     steps:
@@ -45,4 +45,3 @@ jobs:
       - run: pip install black
       - name: black
         run: black --check .
-
