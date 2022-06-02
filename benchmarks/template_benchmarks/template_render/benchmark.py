@@ -1,6 +1,7 @@
-from django import VERSION, template
 from django.http import HttpRequest
 from django.shortcuts import render
+
+from django import VERSION, template
 
 from ...utils import bench_setup
 
