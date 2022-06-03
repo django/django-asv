@@ -7,5 +7,13 @@ class QueryCmplxFilter:
         bench_setup(migrate=True)
 
     def time_query_complex_filter(self):
-        for i in range(0, 10):
-            Book.objects.complex_filter({"pk": f"{i}"})
+        Book.objects.complex_filter({"pk": 1})
+        Book.objects.complex_filter({"pk": 2})
+        Book.objects.complex_filter({"pk": 3})
+        Book.objects.complex_filter({"pk": 4})
+        Book.objects.complex_filter({"pk": 5})
+        Book.objects.complex_filter({"pk": 6})
+        Book.objects.complex_filter({"pk": 7})
+        Book.objects.complex_filter({"pk": 8})
+        Book.objects.complex_filter({"pk": 9})
+        Book.objects.complex_filter({"pk": 10})
