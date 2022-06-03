@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "benchmarks.model_benchmarks.model_create",
     "benchmarks.model_benchmarks.model_save_new",
     "benchmarks.model_benchmarks.model_save_existing",
+    "benchmarks.model_benchmarks.model_delete",
     "benchmarks.other_benchmarks.raw_sql",
     "benchmarks.query_benchmarks.query_distinct",
     "benchmarks.url_benchmarks.url_resolve",

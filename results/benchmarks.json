@@ -127,6 +127,22 @@
         "version": "91180db199cb53578ddba7cc684885e2afde1d4c44861f83fd2a06b18f33b747",
         "warmup_time": -1
     },
+    "model_benchmarks.model_delete.benchmark.ModelDelete.time_delete": {
+        "code": "class ModelDelete:\n    def time_delete(self):\n        for i in range(0, 10):\n            Book.objects.filter(title=f\"foobar{i}\").delete()\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(0, 10):\n            Book.objects.create(title=f\"foobar{i}\")",
+        "min_run_count": 2,
+        "name": "model_benchmarks.model_delete.benchmark.ModelDelete.time_delete",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "78d87b8ebdf1b031322ae956a4dffa31f0eb3815e341e934376a88e30c828808",
+        "warmup_time": -1
+    },
     "model_benchmarks.model_save_existing.benchmark.SaveExisting.time_save_existing": {
         "code": "class SaveExisting:\n    def time_save_existing(self):\n        b = Book.objects.get(id=1)\n        for i in range(0, 30):\n            b.save()\n\n    def setup(self):\n        bench_setup(migrate=True)\n        Book.objects.create(id=1, title=\"Foo\")",
         "min_run_count": 2,
