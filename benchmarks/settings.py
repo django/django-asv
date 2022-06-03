@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "benchmarks.template_benchmarks.template_compilation",
     "benchmarks.query_benchmarks.query_annotate",
     "benchmarks.query_benchmarks.query_all_conv",
+    "benchmarks.query_benchmarks.query_complex_filter",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
