@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     "benchmarks.model_benchmarks.model_create",
     "benchmarks.model_benchmarks.model_save_new",
     "benchmarks.model_benchmarks.model_save_existing",
+    "benchmarks.other_benchmarks.raw_sql",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"

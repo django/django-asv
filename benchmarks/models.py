@@ -15,10 +15,6 @@ class Book(models.Model):
     author = models.ForeignKey("Author", on_delete=models.CASCADE, null=True)
 
 
-class OneField(models.Model):
-    field1 = models.CharField(max_length=100)
-
-
 class Author(models.Model):
     author = models.CharField(max_length=100)
 
