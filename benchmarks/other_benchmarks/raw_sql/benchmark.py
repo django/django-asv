@@ -13,5 +13,5 @@ class RawSql:
     def time_raw_sql(self):
         for i in range(10):
             cursor = connection.cursor()
-            cursor.execute("select field1 from other_benchmarks_onefield")
+            cursor.execute("select field1 from raw_sql_onefield")
             list(cursor.fetchall())
