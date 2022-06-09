@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_all_conv",
     "benchmarks.query_benchmarks.query_complex_filter",
     "benchmarks.query_benchmarks.query_dates",
+    "benchmarks.query_benchmarks.query_delete_related",
     "benchmarks.model_benchmarks.model_create",
     "benchmarks.model_benchmarks.model_save_new",
     "benchmarks.model_benchmarks.model_save_existing",
@@ -29,6 +30,8 @@ INSTALLED_APPS = [
     "benchmarks.url_benchmarks.url_resolve_flat",
     "benchmarks.url_benchmarks.url_resolve_nested",
     "benchmarks.url_benchmarks.url_reverse",
+    "benchmarks.query_benchmarks.query_exclude",
+    "benchmarks.query_benchmarks.query_exists",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
