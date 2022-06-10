@@ -1,0 +1,25 @@
+name: Publish results
+
+on:
+  workflow_run:
+    workflows: ["Benchmark"]
+    types:
+      - completed
+
+jobs:
+  publish_results:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Requirements
+        run: pip install -r requirements.txt
+      - name: Git config
+        run: |
+          git config --global user.name "gh-pages bot"
+          git config --global user.email "gh-pages-bot@benchmarks.com"
+      - name: Fetch changes in gh-pages branch
+        run: git fetch origin gh-pages:gh-pages
+      - name: Publish results
+        run: |
+          asv gh-pages

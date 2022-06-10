@@ -1,3 +1,2 @@
 asv
-virtualenv
 pre-commit
