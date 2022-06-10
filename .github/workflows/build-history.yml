@@ -1,14 +1,12 @@
-name: Benchmark
+name: Build results
 
 on:
-  pull_request:
   push:
     branches:
       - "main"
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
+
   run_benchmarks:
     strategy:
       matrix:
@@ -26,7 +24,7 @@ jobs:
       - name: Run Benchmarks
         run: |-
           asv machine --machine ${{ matrix.os }} --yes
-          asv run
+          asv run HASHFILE:commits.txt
       - name: Move results(windows)
         if: ${{ matrix.os=='windows-2016' || matrix.os=='windows-2019' || matrix.os=='windows-2022'}}
         run: |
