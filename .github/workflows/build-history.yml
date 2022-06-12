@@ -30,6 +30,6 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           author_name: Github actions bot
-          message: 'results for ${{ matrix.os }} added [skip ci]'
+          message: 'result history for ${{ matrix.os }} added [skip ci]'
           pull: '--rebase --autostash'
           push: origin/bench_and_publish_workflows
