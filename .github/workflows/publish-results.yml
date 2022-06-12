@@ -18,13 +18,9 @@ jobs:
           python-version: '3.10'
       - name: Install Requirements
         run: pip install -r requirements.txt
-      - name: Copy asv.conf
-        run: cp -f asv.conf.json ci-results/
       - name: Publish results
         run: |
-          cd ci-results
-          asv publish
-          cd ..
+          asv publish --html-dir ci-results-preview
       - name: Commit results
         uses: EndBug/add-and-commit@v9
         with:

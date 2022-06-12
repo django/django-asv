@@ -5,14 +5,15 @@ on:
   push:
     branches:
       - "main"
+      - "bench_and_publish_workflows"
   schedule:
     - cron: '0 0 * * *'
 
 jobs:
-  run_benchmarks:
+  run_benchmarks_ubuntu:
     strategy:
       matrix:
-        os: ['ubuntu-18.04', 'ubuntu-20.04', 'ubuntu-22.04', 'windows-2016', 'windows-2019', 'windows-2022']
+        os: ['ubuntu-22.04', 'windows-2022']
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout
@@ -27,18 +28,6 @@ jobs:
         run: |-
           asv machine --machine ${{ matrix.os }} --yes
           asv run
-      - name: Move results(windows)
-        if: ${{ matrix.os=='windows-2016' || matrix.os=='windows-2019' || matrix.os=='windows-2022'}}
-        run: |
-          if(!( test-path ci-results/results/${{ matrix.os }} )) { mkdir ci-results/results/${{ matrix.os }} }
-          move-item -path results/${{ matrix.os}}/*.* ci-results/results/${{ matrix.os }}/ -force
-          move-item -path results/benchmarks.json ci-results/results/ -force
-      - name: Move results(ubuntu)
-        if: ${{ matrix.os=='ubuntu-18.04' || matrix.os=='ubuntu-20.04' || matrix.os=='ubuntu-22.04'}}
-        run: |
-          mkdir -p ci-results/results/${{ matrix.os}}/
-          mv -f results/${{ matrix.os}}/*.* ci-results/results/${{ matrix.os}}/
-          mv -f results/benchmarks.json ci-results/results/
       - name: Commit results
         uses: EndBug/add-and-commit@v9
         with:
