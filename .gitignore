@@ -140,7 +140,11 @@ cython_debug/
 # asv
 Django/
 html/
-results/
+results/*
+!results/macos-12
+!results/ubuntu-22.04
+!results/windows-2022
+!results/benchmarks.json
 
 # vscode
 settings.json
