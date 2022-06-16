@@ -18,9 +18,13 @@ jobs:
           python-version: '3.10'
       - name: Install Requirements
         run: pip install -r requirements.txt
+      - name: Git config
+        run: |
+          git config --global user.name "gh-pages bot"
+          git config --global user.email "gh-pages-bot@django.com"
       - name: Publish results
         run: |
-          asv publish --html-dir ci-results-preview
+          asv gh-pages --rewrite
       - name: Commit results
         uses: EndBug/add-and-commit@v9
         with:
