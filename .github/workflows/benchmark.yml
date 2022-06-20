@@ -19,11 +19,17 @@ jobs:
       - name: Run Benchmarks
         run: |-
           asv machine --machine ubuntu-22.04 --yes
-          asv run --skip-existing
+          asv run --skip-existing --strict
       - name: Commit results
+        if: github.event_name != 'pull_request'
         uses: EndBug/add-and-commit@v9
         with:
           author_name: Github actions bot
           message: 'Results for ubuntu-22.04 added [skip ci].'
           pull: '--rebase --autostash'
           add: '-f results/*'
+
+  call_publish_results_workflow:
+      needs: run_benchmarks
+      if: github.event_name != 'pull_request'
+      uses: smithdc1/django-asv/.github/workflows/publish-results.yml@main

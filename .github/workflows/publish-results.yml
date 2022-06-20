@@ -1,10 +1,6 @@
 name: Publish results
 
-on:
-  workflow_run:
-    workflows: ["Benchmark"]
-    types:
-      - completed
+on: workflow_call
 
 jobs:
   publish_results:
