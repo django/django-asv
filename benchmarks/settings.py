@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_filter",
     "benchmarks.query_benchmarks.query_in_bulk",
     "benchmarks.query_benchmarks.query_latest",
+    "benchmarks.query_benchmarks.query_order_by",
     "benchmarks.query_benchmarks.query_none",
     "benchmarks.query_benchmarks.query_prefetch_related",
 ]
