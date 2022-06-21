@@ -383,6 +383,22 @@
         "version": "703c97a4784e3948b78e4019e0a1815d8860766dda028d133cc74da22931fe72",
         "warmup_time": -1
     },
+    "query_benchmarks.query_all_multifield.benchmark.QueryMultiField.time_iter": {
+        "code": "class QueryMultiField:\n    def time_iter(self):\n        list(MultiField.objects.iterator())\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(0, 3000):\n            kwargs = {f\"field{j}\": f\"foobar_{i}_{j}\" for j in range(1, 11)}\n            MultiField(**kwargs).save()",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_all_multifield.benchmark.QueryMultiField.time_iter",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "81d47c90f0725e62f1d6236a21379dcaa2cda65193d9e2163556cbefd2acb914",
+        "warmup_time": -1
+    },
     "query_benchmarks.query_annotate.benchmark.QueryAnnotate.time_annotate": {
         "code": "class QueryAnnotate:\n    def time_annotate(self):\n        list(Book.objects.values(\"title\").annotate(books_total=Count(\"id\")))\n        list(Book.objects.values(\"title\").annotate(books_total=Count(\"id\")))\n        list(Book.objects.values(\"title\").annotate(books_total=Count(\"id\")))\n        list(Book.objects.values(\"title\").annotate(books_total=Count(\"id\")))\n        list(Book.objects.values(\"title\").annotate(books_total=Count(\"id\")))\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
@@ -495,6 +511,22 @@
         "version": "95f702f8cefab6c10cf13623abd6b66fab22232e235f9466701ff131d30f9f2c",
         "warmup_time": -1
     },
+    "query_benchmarks.query_filter.benchmark.QueryFilter.time_query_filter": {
+        "code": "class QueryFilter:\n    def time_query_filter(self):\n        list(Book.objects.filter(id=1))\n        list(Book.objects.filter(id=2))\n        list(Book.objects.filter(id=3))\n        list(Book.objects.filter(id=4))\n        list(Book.objects.filter(id=5))\n        list(Book.objects.filter(id=6))\n        list(Book.objects.filter(id=7))\n        list(Book.objects.filter(id=8))\n        list(Book.objects.filter(id=9))\n        list(Book.objects.filter(id=10))\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_filter.benchmark.QueryFilter.time_query_filter",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "4bc7858513d878a27705a1bb6e6bea7b102ce1b39d072d9d18e9c6a072ea637b",
+        "warmup_time": -1
+    },
     "query_benchmarks.query_in_bulk.benchmark.QueryInBulk.time_query_in_bulk": {
         "code": "class QueryInBulk:\n    def time_query_in_bulk(self):\n        Book.objects.in_bulk([1])\n        Book.objects.in_bulk([1, 2])\n        Book.objects.in_bulk([1, 2, 3])\n        Book.objects.in_bulk([1, 2, 3, 4])\n        Book.objects.in_bulk([1, 2, 3, 4, 5])\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
@@ -511,10 +543,10 @@
         "version": "b18427aab8a0e5e2060eca1624c3481c013959597961cb0bb56e1c7d0c9f9c30",
         "warmup_time": -1
     },
-    "query_benchmarks.query_multifield.benchmark.QueryMultiField.time_iter": {
-        "code": "class QueryMultiField:\n    def time_iter(self):\n        list(MultiField.objects.iterator())\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(0, 3000):\n            kwargs = {f\"field{j}\": f\"foobar_{i}_{j}\" for j in range(1, 11)}\n            MultiField(**kwargs).save()",
+    "query_benchmarks.query_latest.benchmark.QueryLatest.time_query_latest": {
+        "code": "class QueryLatest:\n    def time_query_latest(self):\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n        Book.objects.latest()\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
-        "name": "query_benchmarks.query_multifield.benchmark.QueryMultiField.time_iter",
+        "name": "query_benchmarks.query_latest.benchmark.QueryLatest.time_query_latest",
         "number": 0,
         "param_names": [],
         "params": [],
@@ -524,7 +556,55 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "81d47c90f0725e62f1d6236a21379dcaa2cda65193d9e2163556cbefd2acb914",
+        "version": "4ce2d76b4754c60ab9bbf96624f17b71a4564faaa2c6e66d6df8dcb91fc5e104",
+        "warmup_time": -1
+    },
+    "query_benchmarks.query_none.benchmark.QueryNone.time_query_none": {
+        "code": "class QueryNone:\n    def time_query_none(self):\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n        list(Book.objects.none())\n\n    def setup(self):\n        bench_setup()",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_none.benchmark.QueryNone.time_query_none",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "2113318162281474bb6fffb406282d950cb99bdf292f9ad2590b771faac32f4a",
+        "warmup_time": -1
+    },
+    "query_benchmarks.query_order_by.benchmark.QueryOrderBy.time_query_order_by": {
+        "code": "class QueryOrderBy:\n    def time_query_order_by(self):\n        list(Book.objects.order_by(\"id\"))\n        list(Book.objects.order_by(\"id\"))\n        list(Book.objects.order_by(\"id\"))\n    \n        list(Book.objects.order_by(\"title\"))\n        list(Book.objects.order_by(\"title\"))\n        list(Book.objects.order_by(\"title\"))\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_order_by.benchmark.QueryOrderBy.time_query_order_by",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "87da8adfc118616f7404a1e760d45b0820ec53df43b8f4d34a0a2ecea0de279e",
+        "warmup_time": -1
+    },
+    "query_benchmarks.query_prefetch_related.benchmark.QueryPrefetch.time_query_prefetch": {
+        "code": "class QueryPrefetch:\n    def time_query_prefetch(self):\n        for i in range(10):\n            for a in Author.objects.prefetch_related(\"books\"):\n                list(a.books.all())\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(20):\n            a = Author.objects.create(author=f\"Author {i}\")\n            books = [Book.objects.create(title=f\"Title {j}\") for j in range(3)]\n            a.books.add(*books)",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_prefetch_related.benchmark.QueryPrefetch.time_query_prefetch",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "2829296cc2e48cdcbe705533de301698c251efb22acaf9a96c9c7912c6096ab8",
         "warmup_time": -1
     },
     "template_benchmarks.template_compilation.benchmark.TemplateCompile.time_template_compile": {
