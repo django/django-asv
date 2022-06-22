@@ -8,7 +8,7 @@ class QueryAggr:
     def setup(self):
         bench_setup(migrate=True)
 
-    def time_aggr(self):
+    def time_aggregate(self):
         Book.objects.all().aggregate(Count("title"))
         Book.objects.all().aggregate(Count("title"))
         Book.objects.all().aggregate(Count("title"))

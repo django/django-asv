@@ -383,6 +383,22 @@
         "version": "0c8f296a5321b15a012022e14e4767e90f0037ac037c6529be5521dd2306fc99",
         "warmup_time": -1
     },
+    "query_benchmarks.query_aggregate.benchmark.QueryAggr.time_aggregate": {
+        "code": "class QueryAggr:\n    def time_aggregate(self):\n        Book.objects.all().aggregate(Count(\"title\"))\n        Book.objects.all().aggregate(Count(\"title\"))\n        Book.objects.all().aggregate(Count(\"title\"))\n    \n        Book.objects.all().aggregate(Count(\"id\"))\n        Book.objects.all().aggregate(Count(\"id\"))\n        Book.objects.all().aggregate(Count(\"id\"))\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_aggregate.benchmark.QueryAggr.time_aggregate",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "262bd417ed516b6db9458b2a27447c9330457648afb5cdd41911921e935c68b9",
+        "warmup_time": -1
+    },
     "query_benchmarks.query_all_conv.benchmark.QueryAllConv.time_query_all_conv": {
         "code": "class QueryAllConv:\n    def time_query_all_conv(self):\n        list(Converters.objects.iterator())\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(0, 100):\n            Converters().save()",
         "min_run_count": 2,
