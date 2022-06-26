@@ -12,21 +12,22 @@ class MultiValueDictBench:
         self.update = {"a": ["a"], "b": ["a", "b"], "c": ["a", "b", "c"]}
 
     def time_multi_value_dict(self):
-        caseDict = MultiValueDict(self.case)
+        for i in range(1000):
+            case_dict = MultiValueDict(self.case)
 
-        caseDict["a"]
-        caseDict["b"]
-        caseDict["c"]
+            case_dict["a"]
+            case_dict["b"]
+            case_dict["c"]
 
-        caseDict.update(self.update)
-        copy.copy(caseDict)
-        copy.deepcopy(caseDict)
+            case_dict.update(self.update)
+            copy.copy(case_dict)
+            copy.deepcopy(case_dict)
 
-        caseDict.items()
-        caseDict.lists()
-        for i in caseDict:
-            i
+            case_dict.items()
+            case_dict.lists()
+            for i in case_dict:
+                i
 
-        caseDict["a"] = "A"
-        caseDict["b"] = "B"
-        caseDict["c"] = "C"
+            case_dict["a"] = "A"
+            case_dict["b"] = "B"
+            case_dict["c"] = "C"
