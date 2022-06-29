@@ -1,4 +1,20 @@
 {
+    "data_struct_benchmarks.multi_value_dict.benchmark.MultiValueDictBench.time_multi_value_dict": {
+        "code": "class MultiValueDictBench:\n    def time_multi_value_dict(self):\n        for i in range(1000):\n            case_dict = MultiValueDict(self.case)\n    \n            case_dict[\"a\"]\n            case_dict[\"b\"]\n            case_dict[\"c\"]\n    \n            case_dict.update(self.update)\n            copy.copy(case_dict)\n            copy.deepcopy(case_dict)\n    \n            case_dict.items()\n            case_dict.lists()\n            for i in case_dict:\n                i\n    \n            case_dict[\"a\"] = \"A\"\n            case_dict[\"b\"] = \"B\"\n            case_dict[\"c\"] = \"C\"\n\n    def setup(self):\n        bench_setup()\n        self.case = {\"a\": [\"a\"], \"b\": [\"a\", \"b\"], \"c\": [\"a\", \"b\", \"c\"]}\n        self.update = {\"a\": [\"a\"], \"b\": [\"a\", \"b\"], \"c\": [\"a\", \"b\", \"c\"]}",
+        "min_run_count": 2,
+        "name": "data_struct_benchmarks.multi_value_dict.benchmark.MultiValueDictBench.time_multi_value_dict",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "87acd4d238cf055be76b8987a6748b697c7515e52712dfee8ee0efebc4de5f86",
+        "warmup_time": -1
+    },
     "form_benchmarks.form_clean.benchmark.FormClean.time_form_clean": {
         "code": "class FormClean:\n    def time_form_clean(self):\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n        self.form_clean.full_clean()\n\n    def setup(self):\n        bench_setup()\n        self.form_clean = BookForm({\"title\": \"hi\"})",
         "min_run_count": 2,
