@@ -623,6 +623,22 @@
         "version": "2829296cc2e48cdcbe705533de301698c251efb22acaf9a96c9c7912c6096ab8",
         "warmup_time": -1
     },
+    "query_benchmarks.queryset_filter_chain.benchmark.FilterChain.time_filter_chain": {
+        "code": "class FilterChain:\n    def time_filter_chain(self):\n        Book.objects.filter(title=\"Talent\").filter(\n            description__icontains=\"top performers\"\n        ).filter(author_name__startswith=\"Geoff\").filter(\n            date_created__lt=datetime.datetime(year=2010, month=1, day=1)\n        ).filter(\n            date_created__gte=datetime.date(year=2007, month=1, day=1)\n        ).filter(\n            date_published=datetime.datetime.now()\n        ).filter(\n            enabled=True\n        )\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "query_benchmarks.queryset_filter_chain.benchmark.FilterChain.time_filter_chain",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "cacb3eebda5c4122da9b0beaf867dcfb1c6754bf88abe017853671093e6ff2ca",
+        "warmup_time": -1
+    },
     "template_benchmarks.template_compilation.benchmark.TemplateCompile.time_template_compile": {
         "code": "class TemplateCompile:\n    def time_template_compile(self):\n        template.Template(\n            \"\"\"\n            {% for v in vals %}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n                {{ v }}\n            {% endfor %}\n        \"\"\"\n        )\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
