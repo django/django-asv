@@ -144,7 +144,7 @@
         "warmup_time": -1
     },
     "model_benchmarks.model_delete.benchmark.ModelDelete.time_delete": {
-        "code": "class ModelDelete:\n    def time_delete(self):\n        for i in range(0, 10):\n            Book.objects.filter(title=f\"foobar{i}\").delete()\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(0, 10):\n            Book.objects.create(title=f\"foobar{i}\")",
+        "code": "class ModelDelete:\n    def time_delete(self):\n        for i in range(10):\n            Book.objects.filter(title=f\"foobar{i}\").delete()\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(10):\n            Book.objects.create(title=f\"foobar{i}\")",
         "min_run_count": 2,
         "name": "model_benchmarks.model_delete.benchmark.ModelDelete.time_delete",
         "number": 0,
@@ -156,7 +156,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "78d87b8ebdf1b031322ae956a4dffa31f0eb3815e341e934376a88e30c828808",
+        "version": "79a09d314c79d086df04a7fe572a564d56bd7e48081bfff8fc5a06a82c07c594",
         "warmup_time": -1
     },
     "model_benchmarks.model_save_existing.benchmark.SaveExisting.time_save_existing": {
