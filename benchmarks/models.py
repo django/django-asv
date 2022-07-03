@@ -1,8 +1,7 @@
 import os
 
-from django.db import models
-
 import django
+from django.db import models
 
 try:
     os.environ["DJANGO_SETTINGS_MODULE"] = "benchmarks.settings"
