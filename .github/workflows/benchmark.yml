@@ -11,17 +11,6 @@ on:
 jobs:
   run_benchmarks:
     runs-on: 'ubuntu-22.04'
-    strategy:
-      max-parallel: 1
-      fail-fast: false
-      matrix:
-        include:
-          - name: "processes_1"
-            asv-args: "-a processes=1"
-          - name: "no_interleave"
-            asv-args: "--no-interleave-processes"
-          - name: "default"
-            asv-args: "--interleave-processes -a processes=2"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,7 +29,7 @@ jobs:
         run: |-
           asv machine --machine ubuntu-22.04 --yes
           set +e
-          asv continuous ${{ matrix.asv-args }} --split --show-stderr 'HEAD^' 'HEAD'
+          asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD'
           set -e
       - name: Commit results
         if: github.event_name != 'pull_request'
