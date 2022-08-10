@@ -2,7 +2,7 @@
 
 This repository contains the benchmarks for measuring Django's performance over time.
 
-The benchmarking process is carried out by the benchmarking tool [airspeed velocity](https://asv.readthedocs.io/en/stable/) and the results can be viewed [here](https://smithdc1.github.io/django-asv/)
+The benchmarking process is carried out by the benchmarking tool [airspeed velocity](https://asv.readthedocs.io/en/stable/) and the results can be viewed [here](https://django.github.io/django-asv/)
 
 ## **Running the benchmarks**
 ---
