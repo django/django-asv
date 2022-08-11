@@ -45,3 +45,13 @@ urlpatterns.append(
 urlpatterns.append(
     path("", include("benchmarks.req_resp_benchmarks.http_methods.urls"))
 )
+
+# default_middleware
+urlpatterns.append(
+    path("", include("benchmarks.req_resp_benchmarks.default_middleware.urls"))
+)
+
+# http methods
+urlpatterns.append(
+    path("", include("benchmarks.req_resp_benchmarks.http_methods.urls"))
+)
