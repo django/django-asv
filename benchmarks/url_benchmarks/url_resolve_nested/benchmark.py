@@ -8,4 +8,4 @@ class UrlResolveNested:
         bench_setup()
 
     def time_resolve_nested(self):
-        resolve("/0/00/000/0000/00000/000000/0000000/00000000/leaf")
+        resolve("/url-resolve-nested/0/00/000/0000/00000/000000/0000000/00000000/leaf")

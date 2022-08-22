@@ -9,6 +9,6 @@ class UrlResolve:
 
     def time_resolve(self):
         for i in range(100):
-            resolve("/basic/")
-            resolve("/fallthroughview/")
-            resolve("/replace/1")
+            resolve("/url-resolve/basic/")
+            resolve("/url-resolve/fallthroughview/")
+            resolve("/url-resolve/replace/1")
