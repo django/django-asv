@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_raw_deferred",
     "benchmarks.query_benchmarks.query_raw",
     "benchmarks.query_benchmarks.query_select_related",
+    "benchmarks.other_benchmarks.limited_stream",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
