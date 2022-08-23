@@ -52,11 +52,15 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_raw_deferred",
     "benchmarks.query_benchmarks.query_raw",
     "benchmarks.query_benchmarks.query_select_related",
+    "benchmarks.req_resp_benchmarks.default_middleware",
+    "benchmarks.req_resp_benchmarks.http_methods",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
 
 ROOT_URLCONF = "benchmarks.urls"
+
+MIDDLEWARE = []
 
 TEMPLATE_DIRS = (os.path.abspath(os.path.join(os.path.dirname(__file__), "templates")),)
 
