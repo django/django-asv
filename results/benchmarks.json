@@ -768,7 +768,7 @@
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve": {
-        "code": "class UrlResolve:\n    def time_resolve(self):\n        for i in range(100):\n            resolve(\"/url-resolve/basic/\")\n            resolve('/url-resolve/fallthroughview/')\n            resolve('/url-resolve/replace/1')\n\n    def setup(self):\n        bench_setup()",
+        "code": "class UrlResolve:\n    def time_resolve(self):\n        for i in range(100):\n            resolve(\"/url-resolve/basic/\")\n            resolve(\"/url-resolve/fallthroughview/\")\n            resolve(\"/url-resolve/replace/1\")\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
         "name": "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve",
         "number": 0,
@@ -780,7 +780,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "5e37710342e4f2f3779b390ae26a8cbde3ba83e0fec85c9fe7540f3672314054",
+        "version": "70ea9dc8d8b6fada8a7e4fc2c696ad121bf86e150334b27ec2d05bffeac6ee3b",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve_flat.benchmark.UrlResolveFlat.time_resolve_flat": {
