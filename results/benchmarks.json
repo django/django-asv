@@ -704,7 +704,7 @@
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve": {
-        "code": "class UrlResolve:\n    def time_resolve(self):\n        for i in range(100):\n            resolve(\"/basic/\")\n            resolve(\"/fallthroughview/\")\n            resolve(\"/replace/1\")\n\n    def setup(self):\n        bench_setup()",
+        "code": "class UrlResolve:\n    def time_resolve(self):\n        for i in range(100):\n            resolve(\"/url-resolve/basic/\")\n            resolve('/url-resolve/fallthroughview/')\n            resolve('/url-resolve/replace/1')\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
         "name": "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve",
         "number": 0,
@@ -716,11 +716,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "3c38439f75ae298159f3dfaaeadd49cad0e3432dfeac3c26430fc8b562538485",
+        "version": "5e37710342e4f2f3779b390ae26a8cbde3ba83e0fec85c9fe7540f3672314054",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve_flat.benchmark.UrlResolveFlat.time_resolve_flat": {
-        "code": "class UrlResolveFlat:\n    def time_resolve_flat(self):\n        paths = (\n            \"/user/repo/feature19\",\n            \"/section0/feature0\",\n            \"/en/feature10\",\n            \"/ru/feature10\",\n            \"/missing\",\n        )\n        for i in range(100):\n            for path in paths:\n                try:\n                    resolve(path)\n                except Resolver404:\n                    pass\n\n    def setup(self):\n        bench_setup()",
+        "code": "class UrlResolveFlat:\n    def time_resolve_flat(self):\n        paths = (\n            \"/url-resolve-flat/user/repo/feature19\",\n            \"/url-resolve-flat/section0/feature0\",\n            \"/url-resolve-flat/en/feature10\",\n            \"/url-resolve-flat/ru/feature10\",\n            \"/url-resolve-flat/missing\",\n        )\n        for i in range(100):\n            for path in paths:\n                try:\n                    resolve(path)\n                except Resolver404:\n                    pass\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
         "name": "url_benchmarks.url_resolve_flat.benchmark.UrlResolveFlat.time_resolve_flat",
         "number": 0,
@@ -732,11 +732,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "2bcd27020d316f1f52e978b5431877bb72361cc17c635897341765131c0f3de6",
+        "version": "c0168b57a7e3f0fa4a288b1fb1f6c16f1533874de8cfbefc40148706bbe81c89",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve_nested.benchmark.UrlResolveNested.time_resolve_nested": {
-        "code": "class UrlResolveNested:\n    def time_resolve_nested(self):\n        resolve(\"/0/00/000/0000/00000/000000/0000000/00000000/leaf\")\n\n    def setup(self):\n        bench_setup()",
+        "code": "class UrlResolveNested:\n    def time_resolve_nested(self):\n        resolve(\"/url-resolve-nested/0/00/000/0000/00000/000000/0000000/00000000/leaf\")\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
         "name": "url_benchmarks.url_resolve_nested.benchmark.UrlResolveNested.time_resolve_nested",
         "number": 0,
@@ -748,11 +748,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "9872f0a204c08cb8e70ebc08ef0bc38661b2b3bce3f34ebb56d51265ad7746f8",
+        "version": "e60bd3364bf7ff09976cd5f918ea39c249e38709687c7d71761fc96a597e42d2",
         "warmup_time": -1
     },
     "url_benchmarks.url_reverse.benchmark.UrlReverse.time_reverse": {
-        "code": "class UrlReverse:\n    def time_reverse(self):\n        reverse(\"basic\")\n        reverse(\"catchall\")\n        reverse(\"vars\", args=[1])\n        reverse(\"vars\", kwargs={\"var\": 1})\n\n    def setup(self):\n        bench_setup()",
+        "code": "class UrlReverse:\n    def time_reverse(self):\n        reverse(\"url_reverse:basic\")\n        reverse(\"url_reverse:catchall\")\n        reverse(\"url_reverse:vars\", args=[1])\n        reverse(\"url_reverse:vars\", kwargs={\"var\": 1})\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
         "name": "url_benchmarks.url_reverse.benchmark.UrlReverse.time_reverse",
         "number": 0,
@@ -764,7 +764,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "59d150881cb4c34568a326e6b8c5e53e507ae1726e18543bfd6c114239ea2dc6",
+        "version": "36ffdb77bed577a567ba029e73d9fddbfc9c9477ae6c3af7364df1da0dfd3a2e",
         "warmup_time": -1
     },
     "version": 2

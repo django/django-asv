@@ -1,17 +1,37 @@
 from django.urls import include, path
 
-# url_resolve, url_reverse
-urlpatterns = [path("", include("benchmarks.url_benchmarks.url_resolve.urls"))]
+# url_resolve
+urlpatterns = [
+    path("url-resolve/", include("benchmarks.url_benchmarks.url_resolve.urls"))
+]
+
+# url_reverse
+urlpatterns.append(
+    path(
+        "url-reverse/",
+        include("benchmarks.url_benchmarks.url_reverse.urls", namespace="url_reverse"),
+    )
+)
 
 # url_resolve_flat
-urlpatterns.append(path("", include("benchmarks.url_benchmarks.url_resolve_flat.urls")))
+urlpatterns.append(
+    path(
+        "url-resolve-flat/", include("benchmarks.url_benchmarks.url_resolve_flat.urls")
+    )
+)
 
 # url_resolve_nested
 urlpatterns.append(
-    path("", include("benchmarks.url_benchmarks.url_resolve_nested.urls"))
+    path(
+        "url-resolve-nested/",
+        include("benchmarks.url_benchmarks.url_resolve_nested.urls"),
+    )
 )
 
 # template_render
 urlpatterns.append(
-    path("", include("benchmarks.template_benchmarks.template_render.urls"))
+    path(
+        "template-render/",
+        include("benchmarks.template_benchmarks.template_render.urls"),
+    )
 )
