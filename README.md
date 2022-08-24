@@ -83,3 +83,17 @@ asv compare <commit1 SHA or branch name> <commit2 SHA or branch name>
                 ...
     ```
 - Commit changes and create a pull request
+
+
+### **Note: If you are adding a benchmark that contains URL's**
+
+---
+
+- Add the urls in `urls.py` file in your benchmark directory
+- Include the urls in the root URL's file `benchmarks/urls.py` by adding the lines
+```python
+# benchmark_name
+urlpatterns.append(
+    path("benchmark-name/", include("benchmarks.<benchmark_type>.<benchmark_name>.urls"))
+)
+```
