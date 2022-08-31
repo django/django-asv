@@ -13,23 +13,22 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "benchmarks",
+]
+
+# Template Benchmarks
+INSTALLED_APPS += [
     "benchmarks.template_benchmarks.template_render",
     "benchmarks.template_benchmarks.template_compilation",
+]
+
+# Query Benchmarks
+INSTALLED_APPS += [
     "benchmarks.query_benchmarks.query_annotate",
     "benchmarks.query_benchmarks.query_all_conv",
     "benchmarks.query_benchmarks.query_complex_filter",
     "benchmarks.query_benchmarks.query_dates",
     "benchmarks.query_benchmarks.query_delete_related",
-    "benchmarks.model_benchmarks.model_create",
-    "benchmarks.model_benchmarks.model_save_new",
-    "benchmarks.model_benchmarks.model_save_existing",
-    "benchmarks.model_benchmarks.model_delete",
-    "benchmarks.other_benchmarks.raw_sql",
     "benchmarks.query_benchmarks.query_distinct",
-    "benchmarks.url_benchmarks.url_resolve",
-    "benchmarks.url_benchmarks.url_resolve_flat",
-    "benchmarks.url_benchmarks.url_resolve_nested",
-    "benchmarks.url_benchmarks.url_reverse",
     "benchmarks.query_benchmarks.query_exclude",
     "benchmarks.query_benchmarks.query_exists",
     "benchmarks.query_benchmarks.query_filter",
@@ -52,9 +51,35 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_raw_deferred",
     "benchmarks.query_benchmarks.query_raw",
     "benchmarks.query_benchmarks.query_select_related",
+]
+
+# Model Benchmarks
+INSTALLED_APPS += [
+    "benchmarks.model_benchmarks.model_create",
+    "benchmarks.model_benchmarks.model_save_new",
+    "benchmarks.model_benchmarks.model_save_existing",
+    "benchmarks.model_benchmarks.model_delete",
+]
+
+# Other Benchmarks
+INSTALLED_APPS += [
+    "benchmarks.other_benchmarks.raw_sql",
+]
+
+# URL Benchmarks
+INSTALLED_APPS += [
+    "benchmarks.url_benchmarks.url_resolve",
+    "benchmarks.url_benchmarks.url_resolve_flat",
+    "benchmarks.url_benchmarks.url_resolve_nested",
+    "benchmarks.url_benchmarks.url_reverse",
+]
+
+# Request Response Benchmarks
+INSTALLED_APPS += [
     "benchmarks.req_resp_benchmarks.default_middleware",
     "benchmarks.req_resp_benchmarks.http_methods",
 ]
+
 
 SECRET_KEY = "NOT REALLY SECRET"
 
