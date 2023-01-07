@@ -1,7 +1,8 @@
 import os
 
-import django
 from django.core.management import CommandError, call_command
+
+import django
 
 
 def bench_setup(migrate=False):
