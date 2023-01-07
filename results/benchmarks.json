@@ -656,7 +656,7 @@
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_asgi_handler": {
-        "code": "class DefaultMiddleWareBench:\n    async def time_asgi_handler(self):\n        await self.asgi_handler.get_response(self.async_req_factory.get('/inx-pg'))\n        await self.asgi_handler.get_response(self.async_req_factory.get('/inx-pg'))\n        await self.asgi_handler.get_response(self.async_req_factory.get('/inx-pg'))\n        await self.asgi_handler.get_response(self.async_req_factory.get('/inx-pg'))\n        await self.asgi_handler.get_response(self.async_req_factory.get('/inx-pg'))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware()",
+        "code": "class DefaultMiddleWareBench:\n    async def time_asgi_handler(self):\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware()",
         "min_run_count": 2,
         "name": "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_asgi_handler",
         "number": 0,
@@ -668,11 +668,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "a89b08d21937bf6b9e899df7ddf9eb41b867ad95cae75670fdd64ed411a729e0",
+        "version": "dc64e673cf42995fd0a55cc2931fb9715fd8668c61806652c59366c7d956be7b",
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_wsgi_handler": {
-        "code": "class DefaultMiddleWareBench:\n    def time_wsgi_handler(self):\n        self.wsgi_handler.get_response(self.req_factory.get('/inx-pg'))\n        self.wsgi_handler.get_response(self.req_factory.get('/inx-pg'))\n        self.wsgi_handler.get_response(self.req_factory.get('/inx-pg'))\n        self.wsgi_handler.get_response(self.req_factory.get('/inx-pg'))\n        self.wsgi_handler.get_response(self.req_factory.get('/inx-pg'))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware()",
+        "code": "class DefaultMiddleWareBench:\n    def time_wsgi_handler(self):\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware()",
         "min_run_count": 2,
         "name": "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_wsgi_handler",
         "number": 0,
@@ -684,7 +684,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "83277cd1e4c00375f64df78759aa20cbeae767a60f2e8cc9b70bf80dd6ed156f",
+        "version": "91be6b020e9edd27ae6cb3f353a5cf70cea95b36aa9e8512fd2f532e4f4d4711",
         "warmup_time": -1
     },
     "req_resp_benchmarks.http_methods.benchmark.HttpMethods.time_get_method": {
