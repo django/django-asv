@@ -31,7 +31,7 @@ class TruncatorBenchmark:
     def time_words_long_html(self):
         truncator = Truncator(self.html)
         for i in range(100):
-            truncator.words(100)
+            truncator.words(100, html=True)
 
     def time_chars_short(self):
         truncator = Truncator(self.words_50)
@@ -51,4 +51,4 @@ class TruncatorBenchmark:
     def time_chars_long_html(self):
         truncator = Truncator(self.html)
         for i in range(100):
-            truncator.chars(100)
+            truncator.chars(100, html=True)
