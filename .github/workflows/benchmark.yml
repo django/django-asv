@@ -29,7 +29,8 @@ jobs:
         run: |-
           asv machine --machine ubuntu-latest --yes
           asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD'
-        
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
 
   call_publish_results_workflow:
       needs: run_benchmarks
