@@ -5,6 +5,7 @@
     "repo": "https://github.com/django/django.git",
     "branches": ["main"],
     "environment_type": "conda",
+    "conda_channels": ["conda-forge", "defaults"],
     "show_commit_url": "http://github.com/django/django/commit/",
     "pythons": ["3.10"]
 }

@@ -24,8 +24,6 @@ jobs:
         with:
           path: Django/*
           key: Django
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
       - name: Run Benchmarks
         shell: bash -l {0}
         run: |-
