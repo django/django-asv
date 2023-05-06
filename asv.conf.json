@@ -4,7 +4,7 @@
     "project_url": "https://www.djangoproject.com/",
     "repo": "https://github.com/django/django.git",
     "branches": ["main"],
-    "environment_type": "python",
+    "environment_type": "virtualenv",
     "show_commit_url": "http://github.com/django/django/commit/",
     "pythons": ["3.10"]
 }
