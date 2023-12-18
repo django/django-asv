@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_distinct",
     "benchmarks.url_benchmarks.url_resolve",
     "benchmarks.url_benchmarks.url_resolve_flat",
+    "benchmarks.url_benchmarks.url_resolve_flat_i18n_off",
     "benchmarks.url_benchmarks.url_resolve_nested",
     "benchmarks.url_benchmarks.url_reverse",
     "benchmarks.query_benchmarks.query_exclude",
