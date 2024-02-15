@@ -9,27 +9,19 @@ DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"},
 }
 
-INSTALLED_APPS = [
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "benchmarks",
+
+template_benchmarks = [
     "benchmarks.template_benchmarks.template_render",
     "benchmarks.template_benchmarks.template_compilation",
+]
+
+query_benchmarks = [
     "benchmarks.query_benchmarks.query_annotate",
     "benchmarks.query_benchmarks.query_all_conv",
     "benchmarks.query_benchmarks.query_complex_filter",
     "benchmarks.query_benchmarks.query_dates",
     "benchmarks.query_benchmarks.query_delete_related",
-    "benchmarks.model_benchmarks.model_create",
-    "benchmarks.model_benchmarks.model_save_new",
-    "benchmarks.model_benchmarks.model_save_existing",
-    "benchmarks.model_benchmarks.model_delete",
-    "benchmarks.other_benchmarks.raw_sql",
     "benchmarks.query_benchmarks.query_distinct",
-    "benchmarks.url_benchmarks.url_resolve",
-    "benchmarks.url_benchmarks.url_resolve_flat",
-    "benchmarks.url_benchmarks.url_resolve_nested",
-    "benchmarks.url_benchmarks.url_reverse",
     "benchmarks.query_benchmarks.query_exclude",
     "benchmarks.query_benchmarks.query_exists",
     "benchmarks.query_benchmarks.query_filter",
@@ -52,9 +44,47 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_raw_deferred",
     "benchmarks.query_benchmarks.query_raw",
     "benchmarks.query_benchmarks.query_select_related",
+]
+
+model_benchmarks = [
+    "benchmarks.model_benchmarks.model_create",
+    "benchmarks.model_benchmarks.model_save_new",
+    "benchmarks.model_benchmarks.model_save_existing",
+    "benchmarks.model_benchmarks.model_delete",
+]
+
+other_benchmarks = [
+    "benchmarks.other_benchmarks.raw_sql",
+]
+
+url_benchmarks = [
+    "benchmarks.url_benchmarks.url_resolve",
+    "benchmarks.url_benchmarks.url_resolve_flat",
+    "benchmarks.url_benchmarks.url_resolve_nested",
+    "benchmarks.url_benchmarks.url_reverse",
+]
+
+request_response_benchmarks = [
     "benchmarks.req_resp_benchmarks.default_middleware",
     "benchmarks.req_resp_benchmarks.http_methods",
 ]
+
+django_apps = [
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "benchmarks",
+]
+
+INSTALLED_APPS = (
+    django_apps
+    + request_response_benchmarks
+    + url_benchmarks
+    + other_benchmarks
+    + model_benchmarks
+    + query_benchmarks
+    + template_benchmarks
+)
+
 
 SECRET_KEY = "NOT REALLY SECRET"
 
