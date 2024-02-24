@@ -640,7 +640,7 @@
         "warmup_time": -1
     },
     "query_benchmarks.queryset_filter_chain.benchmark.FilterChain.time_filter_chain": {
-        "code": "class FilterChain:\n    def time_filter_chain(self):\n        Book.objects.filter(title=\"Talent\").filter(\n            description__icontains=\"top performers\"\n        ).filter(author_name__startswith=\"Geoff\").filter(\n            date_created__lt=datetime.datetime(year=2010, month=1, day=1)\n        ).filter(\n            date_created__gte=datetime.date(year=2007, month=1, day=1)\n        ).filter(\n            date_published=datetime.datetime.now()\n        ).filter(\n            enabled=True\n        )\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "code": "class FilterChain:\n    def time_filter_chain(self):\n        Book.objects.filter(title=\"Talent\").filter(\n            description__icontains=\"top performers\"\n        ).filter(author_name__startswith=\"Geoff\").filter(\n            date_created__lt=datetime.datetime(\n                year=2010, month=1, day=1, tzinfo=datetime.timezone.utc\n            )\n        ).filter(\n            date_created__gte=datetime.datetime(\n                year=2007, month=1, day=1, tzinfo=datetime.timezone.utc\n            )\n        ).filter(\n            date_published=datetime.datetime.now(tz=datetime.timezone.utc)\n        ).filter(\n            enabled=True\n        )\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
         "name": "query_benchmarks.queryset_filter_chain.benchmark.FilterChain.time_filter_chain",
         "number": 0,
@@ -652,7 +652,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "cacb3eebda5c4122da9b0beaf867dcfb1c6754bf88abe017853671093e6ff2ca",
+        "version": "3331848e92a3a4204883613f77bf2f5e9c573ae959a106b10eb1876d8b34068a",
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_asgi_handler": {
@@ -717,6 +717,22 @@
         "type": "time",
         "unit": "seconds",
         "version": "59e79b6e6f3f6811e76de09bce1c2ea8940e67f715963ebf985cdf9f60a42c65",
+        "warmup_time": -1
+    },
+    "system_check_benchmarks.run_checks.benchmark.SystemChecks.time_checks": {
+        "code": "class SystemChecks:\n    def time_checks(self):\n        run_checks(include_deployment_checks=True, databases=(\"default\",))\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "system_check_benchmarks.run_checks.benchmark.SystemChecks.time_checks",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "84010248ef4315c933cf711beadc06ea3a93cf52a875dfd23993e650e7dc9f0b",
         "warmup_time": -1
     },
     "template_benchmarks.template_compilation.benchmark.TemplateCompile.time_template_compile": {
