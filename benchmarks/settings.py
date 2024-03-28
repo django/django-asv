@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_select_related",
     "benchmarks.req_resp_benchmarks.default_middleware",
     "benchmarks.req_resp_benchmarks.http_methods",
+    "benchmarks.cache_benchmarks.database_cache",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
@@ -84,3 +85,10 @@ TEMPLATES = [
         },
     },
 ]
+
+CACHES = {
+    "db": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "cache_table",
+    },
+}
