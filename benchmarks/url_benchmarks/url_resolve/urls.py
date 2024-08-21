@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import path, re_path
 
 from . import views
 
@@ -13,3 +13,5 @@ urlpatterns = list(generate_filler_patterns(10))
 urlpatterns.append(re_path(r"^basic/$", views.basic, name="basic"))
 urlpatterns.append(re_path(r"^[a-z]*/$", views.catchall, name="catchall"))
 urlpatterns.append(re_path(r"^replace/(?P<var>.*?)", views.vars, name="vars"))
+urlpatterns.append(path("num/<int:var>/", views.vars, name="num"))
+urlpatterns.append(path("basic-path/", views.vars, name="basic-path"))

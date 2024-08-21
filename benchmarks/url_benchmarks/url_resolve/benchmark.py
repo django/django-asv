@@ -12,3 +12,9 @@ class UrlResolve:
             resolve("/url-resolve/basic/")
             resolve("/url-resolve/fallthroughview/")
             resolve("/url-resolve/replace/1")
+
+    def time_resolve_path(self):
+        resolve("/url-resolve/num/1/")
+
+    def time_resolve_literal_path(self):
+        resolve("/url-resolve/basic-path/")
