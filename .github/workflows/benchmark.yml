@@ -30,6 +30,8 @@ jobs:
       - name: Run Benchmarks
         shell: bash -l {0}
         run: |-
+          conda activate base
+          conda install conda-build
           asv machine --machine ubuntu-latest --yes
           echo '```' >> $GITHUB_STEP_SUMMARY
           asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' |\
