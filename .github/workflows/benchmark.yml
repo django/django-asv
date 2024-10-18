@@ -20,6 +20,11 @@ jobs:
       - name: Pull Changes
         if: github.event_name != 'pull_request'
         run: git pull origin
+      - name: Setup Miniforge
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: asv-bench
+          environment-file: environment.yml
       - name: Install Requirements
         run: pip install -r requirements.txt
       - name: Cache Django
