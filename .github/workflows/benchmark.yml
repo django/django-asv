@@ -39,7 +39,7 @@ jobs:
           conda list
           asv machine --machine ubuntu-latest --yes
           echo '```' >> $GITHUB_STEP_SUMMARY
-          asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' |\
+          asv continuous -E conda:asv-bench --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' |\
           sed -n -E '/(before.*after.*ratio)|(BENCHMARKS)/,$p' >> out.txt
           cat out.txt >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
