@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor
+
 from ...utils import bench_setup
 from .models import Book
 
@@ -5,7 +7,9 @@ from .models import Book
 class QueryValues10000:
     def setup(self):
         bench_setup(migrate=True)
-        Book.objects.bulk_create((Book(title="title") for x in range(10000)))
+        with ThreadPoolExecutor(max_workers=10) as exec:
+            for x in range(10000):
+                exec.submit(Book(pk=x, title="title").save)
 
     def teardown(self):
         Book.objects.all().delete()

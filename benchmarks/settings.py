@@ -2,16 +2,17 @@ import os
 
 ALLOWED_HOSTS = ["*"]
 
-DATABASE_ENGINE = "sqlite3"
-DATABASE_NAME = ":memory:"
+DATABASE_ENGINE = "django_mongodb"
+DATABASE_NAME = "benchmark"
 
 DATABASES = {
-    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"},
+    "default": {"ENGINE": "django_mongodb", "NAME": "benchmark"},
 }
 
 INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
+    "django_mongodb",
     "benchmarks",
     "benchmarks.template_benchmarks.template_render",
     "benchmarks.template_benchmarks.template_compilation",
@@ -52,9 +53,17 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_raw_deferred",
     "benchmarks.query_benchmarks.query_raw",
     "benchmarks.query_benchmarks.query_select_related",
+    "benchmarks.query_benchmarks.query_foreign_key",
+    "benchmarks.query_benchmarks.query_foreign_key_one_hundred",
+    "benchmarks.query_benchmarks.query_foreign_key_one_hundred_thousand",
+    "benchmarks.query_benchmarks.query_foreign_key_one_mil",
+    "benchmarks.query_benchmarks.query_foreign_key_one_ten_thousand",
+    "benchmarks.query_benchmarks.query_foreign_key_one_thousand",
     "benchmarks.req_resp_benchmarks.default_middleware",
     "benchmarks.req_resp_benchmarks.http_methods",
 ]
+
+DEFAULT_AUTO_FIELD = "django_mongodb.fields.auto.ObjectIdAutoField"
 
 SECRET_KEY = "NOT REALLY SECRET"
 

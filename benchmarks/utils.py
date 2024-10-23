@@ -11,7 +11,7 @@ def bench_setup(migrate=False):
     except RuntimeError:
         pass
 
-    if migrate is True:
+    if False:
         call_command("migrate", run_syncdb=True, verbosity=0)
         try:
             call_command("loaddata", "initial_data", verbosity=0)
