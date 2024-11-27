@@ -11,5 +11,5 @@
     "environment_type": "conda",
     "conda_channels": ["conda-forge", "defaults"],
     "show_commit_url": "http://github.com/django/django/commit/",
-    "pythons": ["3.10", "3.11", "3.12"]
+    "pythons": ["3.10", "3.11", "3.12", "3.13"]
 }
