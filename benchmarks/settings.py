@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     "benchmarks",
     "benchmarks.template_benchmarks.template_render",
     "benchmarks.template_benchmarks.template_compilation",
+    "benchmarks.template_benchmarks.template_tag_urlize",
     "benchmarks.query_benchmarks.query_annotate",
     "benchmarks.query_benchmarks.query_all_conv",
     "benchmarks.query_benchmarks.query_complex_filter",
