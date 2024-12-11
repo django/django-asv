@@ -1,4 +1,4 @@
-from django.urls import resolve
+from django.urls import resolve, Resolver404
 
 from ...utils import bench_setup
 
@@ -12,3 +12,15 @@ class UrlResolve:
             resolve("/url-resolve/basic/")
             resolve("/url-resolve/fallthroughview/")
             resolve("/url-resolve/replace/1")
+
+    def time_resolve_path(self):
+        resolve("/url-resolve/num/1/")
+
+    def time_resolve_literal_path(self):
+        resolve("/url-resolve/basic-path/")
+
+    def time_resolve_unknown(self):
+        try:
+            resolve("/unknown/")
+        except Resolver404:
+            pass
