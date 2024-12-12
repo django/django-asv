@@ -734,6 +734,21 @@
         "version": "98f359d23b19d1c6aa3ad62313df65654abcb625939a6be24f51231dadae1225",
         "warmup_time": -1
     },
+    "template_benchmarks.template_tag_urlize.benchmark.Urlize.time_urlize": {
+        "code": "class Urlize:\n    def time_urlize(self):\n        urlize(\"Django. \" * 100)\n        urlize(\"https://www.djangoproject.com/ \" * 100)\n\n    def setup(self):\n        bench_setup()",
+        "min_run_count": 2,
+        "name": "template_benchmarks.template_tag_urlize.benchmark.Urlize.time_urlize",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "e60a927f0194bb7cfe35ed36f14f5b49d93e836d1195ed2058994b148d65651f",
+        "warmup_time": -1
+    },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve": {
         "code": "class UrlResolve:\n    def time_resolve(self):\n        for i in range(100):\n            resolve(\"/url-resolve/basic/\")\n            resolve(\"/url-resolve/fallthroughview/\")\n            resolve(\"/url-resolve/replace/1\")\n\n    def setup(self):\n        bench_setup()",
         "min_run_count": 2,
