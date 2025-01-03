@@ -1,30 +1,27 @@
-# **Django ASV**
+# Django ASV
 
 This repository contains the benchmarks for measuring Django's performance over time.
 
-The benchmarking process is carried out by the benchmarking tool [airspeed velocity](https://asv.readthedocs.io/en/stable/) and the results can be viewed [here](https://django.github.io/django-asv/)
+The benchmarking process is carried out by the benchmarking tool [Airspeed Velocity](https://asv.readthedocs.io/en/stable/) and the results can be viewed [Django ASV results page](https://django.github.io/django-asv/).
 
-## **Running the benchmarks**
----
+## Running the benchmarks
 
-### **If you have installed Anaconda or miniconda**
+### Using Conda or Miniconda
 
-`Conda` is being used to run the benchmarks against different versions of python
+**Conda** is being used to run the benchmarks against different versions of **Python**.
 
-If you already have conda or miniconda installed,you can run the benchmarks by using the commands
+If you already have **Conda** or **Miniconda** installed, you can run the benchmarks by using the commands:
 
-```
-pip install asv
-asv run
+```console
+python -m pip install asv
+python -m asv run
 ```
 
 to run the benchmarks against the latest commit.
 
+### Using virtualenv
 
-### **If you have not installed Anaconda or miniconda**
-
-
-If you do not have conda or miniconda installed, change the contents of the file `asv.conf.json` as follows to use `virutalenv` to run the benchmarks
+To use `virutalenv` to run the benchmarks _(e.g. if you do not have **Conda** or **Miniconda** installed)_ change the contents of the file `asv.conf.json` as follows:
 
 ```json
 {
@@ -40,33 +37,32 @@ If you do not have conda or miniconda installed, change the contents of the file
 
 and run the benchmarks using the commands
 
-```
-pip install asv
-asv run
-```
-
-**Note**: `ASV` prompts you to set a machine name on the first run, please do not set it to 'ubuntu-22.04', 'windows-2022' or 'macos-12' as the results for the machines with these names are currently being stored in the repository
-
-## **Comparing Benchmarks Results Of Different Commits Or Branches**
----
-
-Benchmarking results of differnt branches can be compared using the following method
-
-```
-asv run <commit1 SHA or branch1 name>
-asv run <commit2 SHA or branch2 name>
-asv compare <commit1 SHA or branch name> <commit2 SHA or branch name>
+```console
+python -m pip install asv
+python -m asv run
 ```
 
-## **Writing New Benchmarks And Contributing**
----
+> [!NOTE]
+> `ASV` prompts you to set a machine name on the first run, please do not set it to `ubuntu-22.04`, `ubuntu-latest`, `windows-2022` or `macos-12` as the results for the machines with these names are currently being stored in the repository
 
-- Fork this repository and create a new branch
-- Install `pre-commit` and run `pre-commit install` to install pre-commit hooks which will be used to format the code
-- Create a new directory with the name `benchmark_name` under the appropriate category of benchmarks
-- Add the files `__init__.py` and `benchmark.py` to the directory
-- Add the directory to the list of `INSTALLLED_APPS` in settings.py
-- Use the following format to write your benchmark in the file `benchmark.py`
+## Comparing benchmarks results
+
+Benchmarking results of different commits or branches can be compared using the following method:
+
+```console
+python -m asv run <commit1 SHA or branch1 name>
+python -m asv run <commit2 SHA or branch2 name>
+python -m asv compare <commit1 SHA or branch name> <commit2 SHA or branch name>
+```
+
+## Writing new benchmarks and contributing
+
+1. Fork this repository and create a new branch.
+2. Install **pre-commit** and run `python -m pre_commit install` to install hooks which will be used to format the code.
+3. Create a new directory with the name `benchmark_name` under the appropriate category of benchmarks.
+4. Add the files `__init__.py` and `benchmark.py` to the directory.
+5. Add the directory to the list of `INSTALLLED_APPS` in `settings.py`.
+6. Use the following format to write your benchmark in the file `benchmark.py`:
 
     ```python
         from ...utils import bench_setup()
@@ -82,4 +78,4 @@ asv compare <commit1 SHA or branch name> <commit2 SHA or branch name>
             def time_benchmark_name():
                 ...
     ```
-- Commit changes and create a pull request
+7. Commit changes and create a pull request.
