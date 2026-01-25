@@ -119,6 +119,21 @@
         "version": "e142c151a06875776e38885d1898841e9c4cb94eacf6be20e18abe1defa4030b",
         "warmup_time": -1
     },
+    "model_benchmarks.model_bulk_create.benchmark.ModelCreate.time_model_bulk_creation": {
+        "code": "class ModelCreate:\n    def time_model_bulk_creation(self):\n        Book.objects.bulk_create([Book(title=f\"Book {i}\") for i in range(1_000)])\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "model_benchmarks.model_bulk_create.benchmark.ModelCreate.time_model_bulk_creation",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "bad5f59b3aef7c5462fb597f8d48bad75bf6eff7124be901ab0c8c9e674ad69d",
+        "warmup_time": -1
+    },
     "model_benchmarks.model_create.benchmark.ModelCreate.time_model_creation": {
         "code": "class ModelCreate:\n    def time_model_creation(self):\n        Book.objects.create(title=\"hi\")\n        Book.objects.create(title=\"Bye!\")\n        Book.objects.create(title=\"hi\")\n        Book.objects.create(title=\"Bye\")\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
