@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Pull Changes
@@ -23,21 +23,23 @@ jobs:
       - name: Setup Miniforge
         uses: conda-incubator/setup-miniconda@v3
         with:
-          miniforge-version: "24.1.2-0"
           activate-environment: asv-bench
+          environment-file: environment.yml
       - name: Install Requirements
         run: pip install -r requirements.txt
       - name: Cache Django
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: Django/*
           key: Django
       - name: Run Benchmarks
         shell: bash -l {0}
         run: |-
+          conda info
+          conda list
           asv machine --machine ubuntu-latest --yes
           echo '```' >> $GITHUB_STEP_SUMMARY
-          asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' |\
+          asv continuous -E conda:asv-bench --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' |\
           sed -n -E '/(before.*after.*ratio)|(BENCHMARKS)/,$p' >> out.txt
           cat out.txt >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY

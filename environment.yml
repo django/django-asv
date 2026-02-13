@@ -1,0 +1,6 @@
+name: django-asv
+dependencies:
+  - pip
+  - wheel
+  - conda-build
+  - libmambapy
