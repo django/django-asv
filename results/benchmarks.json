@@ -569,6 +569,21 @@
         "version": "bb293444df7ed0ef21cae88a76cdeb7c458c5f31c0d907428fffabdf622ac9e3",
         "warmup_time": -1
     },
+    "query_benchmarks.query_utils_q_create.benchmark.QueryQCreateCallsites.time_q_internal_create_calls": {
+        "code": "class QueryQCreateCallsites:\n    def time_q_internal_create_calls(self):\n        original_create = Q.create\n        call_count = 0\n        call_sites = Counter()\n    \n        def profiled_create(cls, *args, **kwargs):\n            nonlocal call_count, call_sites\n            call_count += 1\n    \n            frame = inspect.stack()[1]\n            call_sites[(frame.filename, frame.lineno, frame.function)] += 1\n    \n            # Normalize arguments\n            if args:\n                children = args[0]\n                connector = args[1] if len(args) > 1 else kwargs.get(\"connector\", Q.AND)\n                negated = args[2] if len(args) > 2 else kwargs.get(\"negated\", False)\n            else:\n                children = kwargs.get(\"children\", [])\n                connector = kwargs.get(\"connector\", Q.AND)\n                negated = kwargs.get(\"negated\", False)\n    \n            return original_create.__func__(cls, children, connector, negated)\n    \n        Q.create = classmethod(profiled_create)\n    \n        for i in range(2000):\n            q1 = Q(a=i)\n            q2 = Q(b=i % 5)\n            q3 = q1 & q2\n            q4 = q3 | Q(c=i)\n    \n        Q.create = original_create\n    \n        self.call_count = call_count\n        self.call_sites = call_sites\n        print(\"CALL COUNT:\", call_count)\n        print(\"CALL SITES:\", call_sites)\n    \n        return {\"call_count\": call_count, \"call_sites\": call_sites}\n\n    def setup(self):\n        bench_setup(migrate=True)",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_utils_q_create.benchmark.QueryQCreateCallsites.time_q_internal_create_calls",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "2c921f5cc4b03a836cd4623b1e0e435211cbbac80b73b1902f8160936bfb8bfb",
+        "warmup_time": -1
+    },
     "query_benchmarks.query_values.benchmark.QueryValues.time_query_values": {
         "code": "class QueryValues:\n    def time_query_values(self):\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n        list(Book.objects.values(\"title\"))\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
