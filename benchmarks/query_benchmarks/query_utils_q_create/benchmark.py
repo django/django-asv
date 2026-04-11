@@ -1,28 +1,34 @@
 from django.db.models import Q
 
 from ...utils import bench_setup
-from .models import Content
 
 
-class QueryQCreate:
+class TimeQCreate:
     def setup(self):
-        bench_setup(migrate=True)
-        Content.objects.bulk_create(
-            [Content(a=i, b=i % 5, c=f"val-{i}") for i in range(1000)]
-        )
-        self.connector_OR = Q.OR
-
-    def teardown(self):
-        Content.objects.all().delete()
-
-    def time_q_create(self):
-        content_list = list(Content.objects.all())
-        Q.create(content_list, self.connector_OR)
-
-    def time_q_create_nested_loop(self):
-        content_list = [
-            Q.create(
-                [(content.a, content.b, content.c) for content in Content.objects.all()]
-            )
+        bench_setup()
+        self.children_no_args = []
+        self.children_small = [("name", "Alice"), ("age", 30)]
+        self.children_large = [(f"field_{i}", i) for i in range(20)]
+        self.children_args_only = ["some_condition"]
+        self.children_mixed = [
+            "cond1",
+            "cond2",
+            ("name", "Bob"),
+            ("active", True),
+            ("score", 99),
         ]
-        Q.create(content_list, self.connector_OR)
+
+    def time_create_no_args(self):
+        return Q().create(children=self.children_no_args)
+
+    def time_create_small(self):
+        return Q().create(children=self.children_small)
+
+    def time_create_large(self):
+        return Q().create(children=self.children_large)
+
+    def time_create_args_only(self):
+        return Q().create(children=self.children_args_only)
+
+    def time_create_mixed(self):
+        return Q().create(children=self.children_mixed)
