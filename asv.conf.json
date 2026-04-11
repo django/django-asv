@@ -2,7 +2,7 @@
     "version": 1,
     "project": "Django",
     "project_url": "https://www.djangoproject.com/",
-    "repo": "../django",
+    "repo": "https://github.com/django/django.git",
     "branches": ["main"],
     "build_command": [
         "python -m pip install build",
@@ -10,5 +10,5 @@
     ],
      "environment_type": "virtualenv",
     "show_commit_url": "http://github.com/django/django/commit/",
-    "pythons": ["3.14"]
+    "pythons": ["3.12", "3.13"]
 }
