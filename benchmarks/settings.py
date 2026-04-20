@@ -9,6 +9,13 @@ DATABASES = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"},
 }
 
+CACHES = {
+    "db": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "cache_table",
+    },
+}
+
 INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -57,6 +64,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_utils_q_create",
     "benchmarks.req_resp_benchmarks.default_middleware",
     "benchmarks.req_resp_benchmarks.http_methods",
+    "benchmarks.cache_benchmarks.database_cache",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
