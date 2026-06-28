@@ -11,7 +11,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "c0632a7c961caef67f4aee7f72992345ce67a15ebad93ed0bf4651d47c921b71",
+        "version": "87acd4d238cf055be76b8987a6748b697c7515e52712dfee8ee0efebc4de5f86",
         "warmup_time": -1
     },
     "form_benchmarks.form_clean.benchmark.FormClean.time_form_clean": {
@@ -26,7 +26,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "47a22bdea0c6afeedc225419bbd8fbfc49bf31732b5fbd38abc3a5d457e5cf58",
+        "version": "ee29794571c41279669d20f20281cc13f17d30b60bcf0a82427562e1966ddbcc",
         "warmup_time": -1
     },
     "form_benchmarks.form_create.benchmark.FormCreate.time_form_create": {
@@ -41,7 +41,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "19cb551d9f6f9e18a09983f2b621d5d14e81c92cce814b0725e15256916bc94d",
+        "version": "f295800916ba0353a8a99603d8dc2b2b9250a086b427f34f687fa6ca8c74a437",
         "warmup_time": -1
     },
     "form_benchmarks.form_render.benchmark.FormRender.time_large_form_render": {
@@ -56,7 +56,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "b3d62e0446c40259b692afc735fc419ecba12ff2942ea13bd780e95dcea112a2",
+        "version": "66f0369fe80d6fd2f3faf90e024b84f3e3f428f86a55391f33c8fda952f4069b",
         "warmup_time": -1
     },
     "form_benchmarks.form_render.benchmark.FormRender.time_small_form_render": {
@@ -71,7 +71,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "55246c4969edc96b5ca39eb8f5f6236fa0378080f7957a2b1bddaf16f64e8a63",
+        "version": "cdb90a82bf65beabdc6b9d90b77b4078dc0421573ddcd3667c163dafc183115c",
         "warmup_time": -1
     },
     "form_benchmarks.form_validate.benchmark.FormValidate.time_form_invalid": {
@@ -86,7 +86,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "383d484b46fed34de8e3d4c2dc2cf12c9f9e5d71b7c943b3d025d03b4e6d285e",
+        "version": "ad7620bc75a45df372d038555834e7ed535578e19fd62452d062cefabdf368f7",
         "warmup_time": -1
     },
     "form_benchmarks.form_validate.benchmark.FormValidate.time_form_validate": {
@@ -101,7 +101,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "ad4539c0a8b3869a292b5b4b2b4194a12098ddcf8e885bb5aeade2218de780d7",
+        "version": "437e1a9cc92f7a7e2962cbcef25685fdc9abb08ea893ef13117809c871ab2485",
         "warmup_time": -1
     },
     "form_benchmarks.select_date_widget.benchmark.DateWidget.time_selectdatewidget": {
@@ -116,7 +116,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "8ea8488133e5c36e93c926a2b840ea82bd351a1c8ccfa785c51004b838878bab",
+        "version": "e142c151a06875776e38885d1898841e9c4cb94eacf6be20e18abe1defa4030b",
         "warmup_time": -1
     },
     "model_benchmarks.model_bulk_create.benchmark.ModelCreate.time_model_bulk_creation": {
@@ -131,7 +131,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "596bad85990ccbcda673e6448dc939ce4c1835bd1fce67cbb282f7ffd46a689b",
+        "version": "bad5f59b3aef7c5462fb597f8d48bad75bf6eff7124be901ab0c8c9e674ad69d",
         "warmup_time": -1
     },
     "model_benchmarks.model_create.benchmark.ModelCreate.time_model_creation": {
@@ -146,7 +146,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "a238f911d6adf6ab591006ca36659078bb8045f7c7e61d7586a3e793ce40bd0f",
+        "version": "91180db199cb53578ddba7cc684885e2afde1d4c44861f83fd2a06b18f33b747",
         "warmup_time": -1
     },
     "model_benchmarks.model_delete.benchmark.ModelDelete.time_delete": {
@@ -161,7 +161,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "c36b248575d5ffff331897714968cb5903562980656dd99ddbfdc6f848dfde6d",
+        "version": "79a09d314c79d086df04a7fe572a564d56bd7e48081bfff8fc5a06a82c07c594",
         "warmup_time": -1
     },
     "model_benchmarks.model_save_existing.benchmark.SaveExisting.time_save_existing": {
@@ -176,7 +176,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "d83fa1ba3a380ce06948deda1effdf89a577eb6d3f961b52ec2635627751e64f",
+        "version": "525f25f65810aa120b97e393077f231c99bb5f88e9f53656cbe71d62a669e246",
         "warmup_time": -1
     },
     "model_benchmarks.model_save_new.benchmark.SaveNew.time_save_new": {
@@ -191,7 +191,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "0d792c77ddcbaf8d56d824172b6b9a6613a26c03cfe7465cd2205bc3ec550f79",
+        "version": "4f0e2dafce2ac247d865fcb80db98261fa0904821d191fa014bf4e8826bdbbe6",
         "warmup_time": -1
     },
     "other_benchmarks.raw_sql.benchmark.RawSql.time_raw_sql": {
@@ -206,7 +206,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "a6549109d132526742a7d40bdfc5dbf81ecfb1d02c991886ca815f43d62528a6",
+        "version": "d0365d9e4c87fd5f9d57ddbee3adb462787c2ced150ff9aff871ee5112a67ca4",
         "warmup_time": -1
     },
     "query_benchmarks.query_aggregate.benchmark.QueryAggr.time_aggregate": {
@@ -221,7 +221,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "8ff192ed62050e9b3303605aedcad3656b672d668ee73236eee104b354277402",
+        "version": "262bd417ed516b6db9458b2a27447c9330457648afb5cdd41911921e935c68b9",
         "warmup_time": -1
     },
     "query_benchmarks.query_all.benchmark.QueryAll.time_query_all": {
@@ -236,7 +236,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "d2334acceb2c9a29aaa2f4a6d15f0e74076249976648a45206923f29ea0419b1",
+        "version": "2cd7258eb4918aea93cd803d894c068e7e8568c04f8ebe9d07964dd654a2904a",
         "warmup_time": -1
     },
     "query_benchmarks.query_all_conv.benchmark.QueryAllConv.time_query_all_conv": {
@@ -251,7 +251,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "cdd3c0fa948d6f9c5cfa46a93dc25ef2d0698d037eb53ea202ca0599340664e7",
+        "version": "d69a382f9674588bcc85e35fc006cbd0f6e5bb405b20c2a43bd509ea38b92b91",
         "warmup_time": -1
     },
     "query_benchmarks.query_annotate.benchmark.QueryAnnotate.time_annotate": {
@@ -266,7 +266,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "dec7cd464d354b7a977af0f2e3e04317facd376c270d4ebc792580407f437fc3",
+        "version": "788b35efac890a1a2c2606a5d7eee47d7c0ecb36f5e1d903b750d462fbb2bf6f",
         "warmup_time": -1
     },
     "query_benchmarks.query_complex_filter.benchmark.QueryCmplxFilter.time_query_complex_filter": {
@@ -281,7 +281,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "54b5062a86bc235b0f7b46633b77c96e2002147d5555618641e9fd4fac6f0cd5",
+        "version": "3ae4f08ae12592cc5bf85bb0ff31501cb9db067c8c3468b04777fb35a0fee1ba",
         "warmup_time": -1
     },
     "query_benchmarks.query_count.benchmark.QueryCount.time_query_count": {
@@ -296,7 +296,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "7795c0fa01a5844bd3aabfd4b10c943f2a1afcd52611e647ae0e4ac320543e0e",
+        "version": "2a025f977800b824be701416db7731d555b887e1b1938443150d24ff4fa8ebd0",
         "warmup_time": -1
     },
     "query_benchmarks.query_dates.benchmark.QueryDates.time_query_dates": {
@@ -311,7 +311,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "1fe879b9227f5b9516e92b3979e754d2f5a5aa3b9ccc7d26d53b1cd44bbf3ac2",
+        "version": "62cc8cf7481d2b65d3c219174582d7cee1309073de75d2dfb248c83d1fdd8b35",
         "warmup_time": -1
     },
     "query_benchmarks.query_delete.benchmark.QueryDelete.time_query_delete": {
@@ -326,7 +326,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "b7cc03a6e60ab78e204425c64a48ab5b18cac95136a916657bee4716922d34d1",
+        "version": "bb8fa0a6ecd64e37ae57561147f7c6827b6fef33a547ec771fd5f1caaf95fb02",
         "warmup_time": -1
     },
     "query_benchmarks.query_delete_related.benchmark.QueryDeleteRel.time_query_del_rel": {
@@ -341,7 +341,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "135aef1a810fcccbf2c4a294127a1febd3e7bd918f378f4c691bbe5fa12c6b08",
+        "version": "8e16574ce95e501c7c1d3131c11dcc4d33607a7d02d86a9bc423e148a13b7a78",
         "warmup_time": -1
     },
     "query_benchmarks.query_distinct.benchmark.QueryDistinct.time_query_distinct": {
@@ -356,7 +356,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "3f3b69bc06d8ab710ae9e27442856b16bf735d156457c8684b6155011de792be",
+        "version": "2381751aa6177ac678baf313bb6b26406eab664fdc0baa7da53323c3f9f0f1ce",
         "warmup_time": -1
     },
     "query_benchmarks.query_exclude.benchmark.QueryExclude.time_query_exclude": {
@@ -371,7 +371,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "4673db1fbd9fd70e806041131ce55ec37cf4b503238579458d7f333028e9ffea",
+        "version": "0ec6607e8596b0906e7f012170ef2fe3db17e5ccc9ddbef4767db6e4b4335046",
         "warmup_time": -1
     },
     "query_benchmarks.query_exists.benchmark.QueryExists.time_query_exists": {
@@ -386,7 +386,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "3a0610dac3f25520212f7e1ee623dfe06b52901471578b250b2b561415ae0666",
+        "version": "95f702f8cefab6c10cf13623abd6b66fab22232e235f9466701ff131d30f9f2c",
         "warmup_time": -1
     },
     "query_benchmarks.query_filter.benchmark.QueryFilter.time_query_filter": {
@@ -401,7 +401,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "dc16b2bc3cb562ad5b6a8324bd510d48b99bb5b577bbc54b8a6ae1d052b4ca6a",
+        "version": "4bc7858513d878a27705a1bb6e6bea7b102ce1b39d072d9d18e9c6a072ea637b",
         "warmup_time": -1
     },
     "query_benchmarks.query_get.benchmark.QueryGet.time_query_get": {
@@ -416,7 +416,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "8958d9f845b81a811cfb94d0cee84fda38a8491812c6b4f23c66463839a7399a",
+        "version": "4f01613632da9bf46243d761371af47295c535ab8d9d4331cee5979b84bda658",
         "warmup_time": -1
     },
     "query_benchmarks.query_get_or_create.benchmark.QueryGetOrCreate.time_query_get_or_create": {
@@ -431,7 +431,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "8debf8e2f4a3f70651a6a880f3a45f703040b8afc8ecc2510e684d9c979714c4",
+        "version": "3e191c7c953a2554cfbf4f5694a7fe4f4445289bd86ca70360662c3c405492fb",
         "warmup_time": -1
     },
     "query_benchmarks.query_in_bulk.benchmark.QueryInBulk.time_query_in_bulk": {
@@ -446,7 +446,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "2fd4f7572c886b630983bb9bc5bbf6fdfff7e9d898e0282e2d9101182a474d32",
+        "version": "b18427aab8a0e5e2060eca1624c3481c013959597961cb0bb56e1c7d0c9f9c30",
         "warmup_time": -1
     },
     "query_benchmarks.query_latest.benchmark.QueryLatest.time_query_latest": {
@@ -461,7 +461,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "7b7e9b1d2455b5a1d4b2576b43f4f97fdc5da3d092363b7c33cceb2510baedea",
+        "version": "4ce2d76b4754c60ab9bbf96624f17b71a4564faaa2c6e66d6df8dcb91fc5e104",
         "warmup_time": -1
     },
     "query_benchmarks.query_none.benchmark.QueryNone.time_query_none": {
@@ -476,7 +476,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "14e31fd8780cd4c46a56cfc559502db87952825bec303a56956156ed552ec12c",
+        "version": "2113318162281474bb6fffb406282d950cb99bdf292f9ad2590b771faac32f4a",
         "warmup_time": -1
     },
     "query_benchmarks.query_order_by.benchmark.QueryOrderBy.time_query_order_by": {
@@ -491,7 +491,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "56feae7b31fca477906dc3cf37b8c329f49430f477cf02a5a1d18de716bcce9b",
+        "version": "87da8adfc118616f7404a1e760d45b0820ec53df43b8f4d34a0a2ecea0de279e",
         "warmup_time": -1
     },
     "query_benchmarks.query_prefetch_related.benchmark.QueryPrefetch.time_query_prefetch": {
@@ -506,7 +506,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "28430900932b9c087f88789eed9fd7f7244d5b058f8d7019ef97f29438d33c3b",
+        "version": "2829296cc2e48cdcbe705533de301698c251efb22acaf9a96c9c7912c6096ab8",
         "warmup_time": -1
     },
     "query_benchmarks.query_raw.benchmark.QueryRaw.time_query_raw": {
@@ -521,7 +521,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "5b5b5c682a79489be6f0bbcc42bebf544237d1107e951ba330e1492322f15009",
+        "version": "5ac872bcc6b5774c75e1c2952ed5a4772b1d72c5beadca3d04c2de677662abdd",
         "warmup_time": -1
     },
     "query_benchmarks.query_raw_deferred.benchmark.QueryRawDeferred.time_query_raw_deferred": {
@@ -536,7 +536,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "a8edbfba3fd413f450ac28a0e19fbdb4f25bbb03fa737a1ad2fffbebba95b505",
+        "version": "60864f8f06fc1c6c54297db2d76c41a07c24a0e1ab6ca9d96fd1d8b6f0e92a28",
         "warmup_time": -1
     },
     "query_benchmarks.query_select_related.benchmark.QuerySelectRelated.time_query_select_related": {
@@ -551,7 +551,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "fe5800df68df56eabeaed548e23d96f002492d2a8a63228ab399ff580eb514c6",
+        "version": "d266535d490ab3814f7b6edf2575e47a22756d095b2c1fc71acf95ddf15287de",
         "warmup_time": -1
     },
     "query_benchmarks.query_update.benchmark.QueryUpdate.time_query_update": {
@@ -566,7 +566,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "78805e47d7cbcfc05dba7c9eb09d222056e9dae79fe5a9ba979f29a82fed70c9",
+        "version": "bb293444df7ed0ef21cae88a76cdeb7c458c5f31c0d907428fffabdf622ac9e3",
         "warmup_time": -1
     },
     "query_benchmarks.query_utils_q_create.benchmark.QCreate.time_create_args_only": {
@@ -581,7 +581,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "43798cafb3677efa23a16b4dcf0f35d3d609d171e5f9c6f327bb5cd3b2fb197a",
+        "version": "dfa02c5416f5925135d34d994f338cf2225d7e4eaeabfdf735139081eaa92270",
         "warmup_time": -1
     },
     "query_benchmarks.query_utils_q_create.benchmark.QCreate.time_create_large": {
@@ -596,7 +596,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "94a4586bf670bdffb1ccbba16bbf14d5b7bda45a49e226754f3aa146ff8075f3",
+        "version": "c1a35d399aa1d034437cde06e6de0b3ecb313eb703911c9de648d57a87a3d421",
         "warmup_time": -1
     },
     "query_benchmarks.query_utils_q_create.benchmark.QCreate.time_create_mixed": {
@@ -611,7 +611,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "cbdf92aa72d2b075de3b57778424306a477c7d0a2e65c8f328bf6e4d8a47d9ea",
+        "version": "03d5ae1161e5adefbb2b15f04120aa314f800029e12e159e2d7570bdf67c488f",
         "warmup_time": -1
     },
     "query_benchmarks.query_utils_q_create.benchmark.QCreate.time_create_no_args": {
@@ -626,7 +626,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "1813f6f17f7964397e517d2e52319ece468ac0f498331dd353b4b890025d0094",
+        "version": "195b14a4b8cecab71030a29a940695a009fd4ea9e83e310bce3a55612bc596e2",
         "warmup_time": -1
     },
     "query_benchmarks.query_utils_q_create.benchmark.QCreate.time_create_small": {
@@ -641,7 +641,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "8f915c6b3a80be9ae468a150b161bb24e259278a6ccd7a414d083d1ebc1f55d6",
+        "version": "8168db55d64d2ff8af9c99a53ec303c4b843471833bc6198d6ed24ac3596886e",
         "warmup_time": -1
     },
     "query_benchmarks.query_values.benchmark.QueryValues.time_query_values": {
@@ -656,7 +656,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "d2c35a72faccc2fd8b7898e8d22dea3b8a6abd450cb9f38406023df0e28b05a0",
+        "version": "f5fb27ea581fc95f397b7998fb8f0ec0e3f82452ca47d5a051d04b718d63d7a3",
         "warmup_time": -1
     },
     "query_benchmarks.query_values_10000.benchmark.QueryValues10000.time_query_values_10000": {
@@ -671,7 +671,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "79817b098acc2a8f9d57c0440ef79002d9c24db066e8792da21daa3845e00212",
+        "version": "6321727629c47f9b9a3e1004a901fef2e3925e7b486275e63242f5094606e2c7",
         "warmup_time": -1
     },
     "query_benchmarks.query_values_list.benchmark.QueryValuesList.time_query_values_list": {
@@ -686,7 +686,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "ed58edba5fb28faf87bdb1f7a28ffe5f9727b6cd42a7da280b0ae827a3c2a287",
+        "version": "0d5f041ebb3f5c8b922ce7d2ac8cc13a84e4858f0a59f1ae6fa3372e37d70d6a",
         "warmup_time": -1
     },
     "query_benchmarks.queryset_filter_chain.benchmark.FilterChain.time_filter_chain": {
@@ -701,7 +701,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "3e1fd29ff7dce0fe74d5847990ca4d26b8ce9d77c63928b82c9d2e31f1e5c11a",
+        "version": "3331848e92a3a4204883613f77bf2f5e9c573ae959a106b10eb1876d8b34068a",
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_asgi_handler": {
@@ -716,7 +716,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "5a5679cc4f6976dd1dc23bee9c4983aa395022d30ac625931dfacfd834346bfc",
+        "version": "dc64e673cf42995fd0a55cc2931fb9715fd8668c61806652c59366c7d956be7b",
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_wsgi_handler": {
@@ -731,7 +731,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "9a0a086c156bd774954b12652520cb33a371e73179fa1c08a17f3a1dc2a52583",
+        "version": "91be6b020e9edd27ae6cb3f353a5cf70cea95b36aa9e8512fd2f532e4f4d4711",
         "warmup_time": -1
     },
     "req_resp_benchmarks.http_methods.benchmark.HttpMethods.time_get_method": {
@@ -746,7 +746,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "502c049a23a8b914e7b454ae62b22fc1640b899fc944bd6283bac3b201c78b20",
+        "version": "b6299c190e8832d00091e7e0034b5e30bdfceedd239bc7f29c698df2a3093f23",
         "warmup_time": -1
     },
     "req_resp_benchmarks.http_methods.benchmark.HttpMethods.time_post_method": {
@@ -761,7 +761,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "bc9b935919c48f4fa6e845084e419d309168139a3be47ec94ce199eee7552f24",
+        "version": "59e79b6e6f3f6811e76de09bce1c2ea8940e67f715963ebf985cdf9f60a42c65",
         "warmup_time": -1
     },
     "system_check_benchmarks.run_checks.benchmark.SystemChecks.time_checks": {
@@ -776,7 +776,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "fd7eec3bba62c0cf36f856aba66f80fe24e88cdcc5bce5e44334fca122304ec6",
+        "version": "84010248ef4315c933cf711beadc06ea3a93cf52a875dfd23993e650e7dc9f0b",
         "warmup_time": -1
     },
     "template_benchmarks.template_compilation.benchmark.TemplateCompile.time_template_compile": {
@@ -791,7 +791,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "fbbeb4b7461b666aa141db4d0dbebd3f7da92056ca8ad83d7c9ced0fc42d0dc8",
+        "version": "38f1b2f3580ca1b6eb7a7132553adf5788365bb818d9a50789d30cf710f7193f",
         "warmup_time": -1
     },
     "template_benchmarks.template_render.benchmark.TemplateRender.time_render_simple": {
@@ -806,7 +806,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "29759c504a7f426b6e0204e318047b026d3fa94cd40024974a7e403cd765783b",
+        "version": "09db9f7279757a0aa4da65ffd085756fc1768e86c4b68e32948d5cb43f0e0e1e",
         "warmup_time": -1
     },
     "template_benchmarks.template_render.benchmark.TemplateRender.time_template_render": {
@@ -821,7 +821,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "807ca0a0969779f272d67e752938f574eb0b64abb19b815109ddf6da8276f061",
+        "version": "98f359d23b19d1c6aa3ad62313df65654abcb625939a6be24f51231dadae1225",
         "warmup_time": -1
     },
     "template_benchmarks.template_tag_urlize.benchmark.Urlize.time_urlize": {
@@ -836,7 +836,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "087664fd84c69c4b759ffe9c55ef90a7452cf4f85b73130790c9e1fa87954c19",
+        "version": "e60a927f0194bb7cfe35ed36f14f5b49d93e836d1195ed2058994b148d65651f",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve": {
@@ -851,7 +851,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "2662e6d0a898ea6ef9dc0326eae14402689f885e7b0da798dd953801e792df00",
+        "version": "70ea9dc8d8b6fada8a7e4fc2c696ad121bf86e150334b27ec2d05bffeac6ee3b",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve_literal_path": {
@@ -866,7 +866,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "04aff16b8962e0a365fa53f8fb0f58603adc9230d651c643369fd2176d2d6275",
+        "version": "364334c9233217f22b7e42fee7f88074ad495a6d257e36b09a0042401a1d2d4d",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve_path": {
@@ -881,7 +881,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "7fcd7d7d1ee5cf773a13453799cb49ff8e87777108536f54a6e48c61f0a28ecc",
+        "version": "5480c6c87e74ac82c117b659081af05dea36b3b18d3b5688e9311cbad75b2491",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve.benchmark.UrlResolve.time_resolve_unknown": {
@@ -896,7 +896,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "7bf509946baa749d3e4983c9e60978e69f4dc8bf4b7387fb7874fef4a954d77c",
+        "version": "7c5a4a6f6ca4093d460cf36301b7734d16183c229bd44d7c825e91447d38fbf2",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve_flat.benchmark.UrlResolveFlat.time_resolve_flat": {
@@ -911,7 +911,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "3b4fbc5709918e1a07f80bb58c678402f5e873332b2984c37b0b5b57089f3816",
+        "version": "c0168b57a7e3f0fa4a288b1fb1f6c16f1533874de8cfbefc40148706bbe81c89",
         "warmup_time": -1
     },
     "url_benchmarks.url_resolve_nested.benchmark.UrlResolveNested.time_resolve_nested": {
@@ -926,7 +926,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "625b2ec7816d355b721129f4f8d47853888e6d2f54d9c73405c1f6c07ecec862",
+        "version": "e60bd3364bf7ff09976cd5f918ea39c249e38709687c7d71761fc96a597e42d2",
         "warmup_time": -1
     },
     "url_benchmarks.url_reverse.benchmark.UrlReverse.time_reverse": {
@@ -941,7 +941,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "e9cb99985036c5c0c1578d77d0c3236e73033a7381abdcbec016578d68800fa5",
+        "version": "36ffdb77bed577a567ba029e73d9fddbfc9c9477ae6c3af7364df1da0dfd3a2e",
         "warmup_time": -1
     },
     "url_benchmarks.url_reverse.benchmark.UrlReverse.time_reverse_literal_path": {
@@ -956,7 +956,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "61cef4810c79fa4c08d947a57e761eb22d203d300083774abdef12e48a8d32b5",
+        "version": "a08cce9702f9a13e047c1992981c9152d939a582677bb2ed6d7d40979340ea53",
         "warmup_time": -1
     },
     "url_benchmarks.url_reverse.benchmark.UrlReverse.time_reverse_path": {
@@ -971,7 +971,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "41ccbc9d45ba5dadad0eaa6a5e37b7ee5f7465e6d267e8875ca23e763a6f393a",
+        "version": "ee4cd8c020d998f80401a1e50bc466ed61bad63ab8048194ffcc38b7eb1c1963",
         "warmup_time": -1
     },
     "version": 2
