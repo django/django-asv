@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_update",
     "benchmarks.query_benchmarks.query_raw_deferred",
     "benchmarks.query_benchmarks.query_raw",
+    "benchmarks.query_benchmarks.query_related_in",
     "benchmarks.query_benchmarks.query_select_related",
     "benchmarks.query_benchmarks.query_utils_q_create",
     "benchmarks.req_resp_benchmarks.default_middleware",
