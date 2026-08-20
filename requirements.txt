@@ -1,2 +1,2 @@
-asv==0.6.3
+asv==0.6.4
 pre-commit
