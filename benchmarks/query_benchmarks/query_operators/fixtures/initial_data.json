@@ -1,0 +1,72 @@
+[
+    {
+         "model": "query_filter.book",
+         "pk": 1,
+         "fields": {
+            "title": "Peter Pan"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 2,
+         "fields": {
+            "title": "Alice in Wonderland"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 3,
+         "fields": {
+            "title": "Charlotte’s Web"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 4,
+         "fields": {
+            "title": "The Wind in the Willows"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 5,
+         "fields": {
+            "title": "Charlie and the Chocolate Factory"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 6,
+         "fields": {
+            "title": "The Velveteen Rabbit"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 7,
+         "fields": {
+            "title": "Winnie the Pooh"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 8,
+         "fields": {
+            "title": "The Little Prince"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 9,
+         "fields": {
+            "title": "The Lion, the Witch, and the Wardrobe"
+        }
+    },
+    {
+         "model": "query_filter.book",
+         "pk": 10,
+         "fields": {
+            "title": "Where the Wild Things Are"
+        }
+    }
+]
