@@ -24,7 +24,7 @@ to run the benchmarks against the latest commit.
 ### **If you have not installed Anaconda or miniconda**
 
 
-If you do not have conda or miniconda installed, change the contents of the file `asv.conf.json` as follows to use `virutalenv` to run the benchmarks
+If you do not have conda or miniconda installed, change the contents of the file `asv.conf.json` as follows to use `virtualenv` to run the benchmarks
 
 ```json
 {
@@ -33,8 +33,12 @@ If you do not have conda or miniconda installed, change the contents of the file
     "project_url": "https://www.djangoproject.com/",
     "repo": "https://github.com/django/django.git",
     "branches": ["main"],
+    "build_command": [
+        "python -m pip install build",
+        "python -m build --wheel -o {build_cache_dir} {build_dir}"
+    ],
     "environment_type": "virtualenv",
-    "show_commit_url": "http://github.com/django/django/commit/",
+    "show_commit_url": "http://github.com/django/django/commit/"
 }
 ```
 
@@ -50,7 +54,7 @@ asv run
 ## **Comparing Benchmarks Results Of Different Commits Or Branches**
 ---
 
-Benchmarking results of differnt branches can be compared using the following method
+Benchmarking results of different branches can be compared using the following method
 
 ```
 asv run <commit1 SHA or branch1 name>
