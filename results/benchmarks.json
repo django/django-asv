@@ -539,6 +539,21 @@
         "version": "60864f8f06fc1c6c54297db2d76c41a07c24a0e1ab6ca9d96fd1d8b6f0e92a28",
         "warmup_time": -1
     },
+    "query_benchmarks.query_related_in.benchmark.QueryRelatedIn.time_query_related_in": {
+        "code": "class QueryRelatedIn:\n    def time_query_related_in(self):\n        Book.objects.filter(author__in=self.author_ids)\n\n    def setup(self):\n        bench_setup(migrate=True)\n        self.author_ids = list(range(10_000))",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_related_in.benchmark.QueryRelatedIn.time_query_related_in",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "1de1671a8f31385177c7e709bd8745edbea4efc4236534007cd6df6ecfcd9a43",
+        "warmup_time": -1
+    },
     "query_benchmarks.query_select_related.benchmark.QuerySelectRelated.time_query_select_related": {
         "code": "class QuerySelectRelated:\n    def time_query_select_related(self):\n        for i in range(10):\n            list(Book.objects.select_related(\"author\"))\n\n    def setup(self):\n        bench_setup(migrate=True)",
         "min_run_count": 2,
