@@ -36,11 +36,18 @@ jobs:
         shell: bash -l {0}
         run: |-
           asv machine --machine ubuntu-latest --yes
+      
+          set +e
+          asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' 2>&1 | tee asv.log
+          exit_code=${PIPESTATUS[0]}
+          set -e
+      
+          sed -n -E '/(before.*after.*ratio)|(BENCHMARKS)/,$p' asv.log >> out.txt
           echo '```' >> $GITHUB_STEP_SUMMARY
-          asv continuous --interleave-processes -a processes=2 --split --show-stderr 'HEAD^' 'HEAD' |\
-          sed -n -E '/(before.*after.*ratio)|(BENCHMARKS)/,$p' >> out.txt
           cat out.txt >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+      
+          exit "$exit_code"
       - name: Commit results
         if: github.event_name != 'pull_request'
         run: |
