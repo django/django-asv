@@ -720,7 +720,7 @@
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_asgi_handler": {
-        "code": "class DefaultMiddleWareBench:\n    async def time_asgi_handler(self):\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n        await self.asgi_handler.get_response(self.async_req_factory.get(\"/inx-pg\"))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware()",
+        "code": "class DefaultMiddleWareBench:\n    def time_asgi_handler(self):\n        self.event_loop.run_until_complete(self._get_asgi_responses())\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware(is_async=True)\n        self.event_loop = asyncio.new_event_loop()",
         "min_run_count": 2,
         "name": "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_asgi_handler",
         "number": 0,
@@ -731,11 +731,11 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "dc64e673cf42995fd0a55cc2931fb9715fd8668c61806652c59366c7d956be7b",
+        "version": "0dfbd8cf4cbb5363a5de95a4cc7f957e7a9755e340b0bea6652374858b42bcd1",
         "warmup_time": -1
     },
     "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_wsgi_handler": {
-        "code": "class DefaultMiddleWareBench:\n    def time_wsgi_handler(self):\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware()",
+        "code": "class DefaultMiddleWareBench:\n    def time_wsgi_handler(self):\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n        self.wsgi_handler.get_response(self.req_factory.get(\"/inx-pg\"))\n\n    def setup(self):\n        bench_setup()\n        self.req_factory = RequestFactory()\n        self.wsgi_handler = WSGIHandler()\n        self.wsgi_handler.load_middleware()\n    \n        self.async_req_factory = AsyncRequestFactory()\n        self.asgi_handler = ASGIHandler()\n        self.asgi_handler.load_middleware(is_async=True)\n        self.event_loop = asyncio.new_event_loop()",
         "min_run_count": 2,
         "name": "req_resp_benchmarks.default_middleware.benchmark.DefaultMiddleWareBench.time_wsgi_handler",
         "number": 0,
@@ -746,7 +746,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "91be6b020e9edd27ae6cb3f353a5cf70cea95b36aa9e8512fd2f532e4f4d4711",
+        "version": "a34337f52f1137571aaf90d6ae0c7b7ff8ba6cae9520d969e5a4f02ba86bc243",
         "warmup_time": -1
     },
     "req_resp_benchmarks.http_methods.benchmark.HttpMethods.time_get_method": {
