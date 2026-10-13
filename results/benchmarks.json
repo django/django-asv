@@ -104,6 +104,21 @@
         "version": "437e1a9cc92f7a7e2962cbcef25685fdc9abb08ea893ef13117809c871ab2485",
         "warmup_time": -1
     },
+    "form_benchmarks.form_validate.benchmark.MultipleChoiceFieldValidate.time_validate_with_duplicate_values": {
+        "code": "class MultipleChoiceFieldValidate:\n    def time_validate_with_duplicate_values(self):\n        self.field.validate(self.values)\n\n    def setup(self):\n        bench_setup()\n        self.field = forms.MultipleChoiceField(\n            choices=[(str(i), str(i)) for i in range(5)]\n        )\n        self.values = [str(i % 5) for i in range(1_000)]",
+        "min_run_count": 2,
+        "name": "form_benchmarks.form_validate.benchmark.MultipleChoiceFieldValidate.time_validate_with_duplicate_values",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "748387d95d61f14c00c2722386e302742138d9765bae95d5c64f7d3dcd66c90e",
+        "warmup_time": -1
+    },
     "form_benchmarks.select_date_widget.benchmark.DateWidget.time_selectdatewidget": {
         "code": "class DateWidget:\n    def time_selectdatewidget(self):\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n        self.widget.get_context(\"widget\", \"2020-10-10\", {})\n\n    def setup(self):\n        bench_setup()\n        self.widget = SelectDateWidget(years=(2020,))",
         "min_run_count": 2,
