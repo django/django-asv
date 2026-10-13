@@ -24,3 +24,15 @@ class FormValidate:
 
     def time_form_invalid(self):
         self.invalid_form.is_valid()
+
+
+class MultipleChoiceFieldValidate:
+    def setup(self):
+        bench_setup()
+        self.field = forms.MultipleChoiceField(
+            choices=[(str(i), str(i)) for i in range(5)]
+        )
+        self.values = [str(i % 5) for i in range(1_000)]
+
+    def time_validate_with_duplicate_values(self):
+        self.field.validate(self.values)
