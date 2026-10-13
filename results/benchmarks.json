@@ -509,6 +509,21 @@
         "version": "2829296cc2e48cdcbe705533de301698c251efb22acaf9a96c9c7912c6096ab8",
         "warmup_time": -1
     },
+    "query_benchmarks.query_prefetch_related_large.benchmark.QueryPrefetch.time_query_prefetch_large": {
+        "code": "class QueryPrefetch:\n    def time_query_prefetch_large(self):\n        for i in range(10):\n            for a in Author.objects.prefetch_related(\"books\"):\n                list(a.books.all())\n\n    def setup(self):\n        bench_setup(migrate=True)\n        authors = Author.objects.bulk_create(\n            [Author(author=f\"Author {i}\") for i in range(2000)]\n        )\n        books = Book.objects.bulk_create(\n            [Book(title=f\"Title {j}\") for _ in range(2000) for j in range(3)]\n        )\n        Through = Author.books.through\n        Through.objects.bulk_create(\n            [\n                Through(author=author, book=books[3 * i + j])\n                for i, author in enumerate(authors)\n                for j in range(3)\n            ]\n        )",
+        "min_run_count": 2,
+        "name": "query_benchmarks.query_prefetch_related_large.benchmark.QueryPrefetch.time_query_prefetch_large",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "repeat": 0,
+        "rounds": 2,
+        "sample_time": 0.01,
+        "type": "time",
+        "unit": "seconds",
+        "version": "69eb8f7f4076fddcaab25e3d166125b1317a23e74d69fa03b3ce70ba2a0b999f",
+        "warmup_time": -1
+    },
     "query_benchmarks.query_raw.benchmark.QueryRaw.time_query_raw": {
         "code": "class QueryRaw:\n    def time_query_raw(self):\n        list(MultiField.objects.raw(\"select * from query_raw_multifield\"))\n\n    def setup(self):\n        bench_setup(migrate=True)\n        for i in range(1000):\n            kwargs = {f\"field{j}\": f\"foobar_{i}_{j}\" for j in range(1, 11)}\n            MultiField(**kwargs).save()",
         "min_run_count": 2,
