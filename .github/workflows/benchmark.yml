@@ -16,22 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+        uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: '3.15'
       - name: Pull Changes
         if: github.event_name != 'pull_request'
         run: git pull origin
       - name: Setup Miniforge
-        uses: conda-incubator/setup-miniconda@v3
+        uses: conda-incubator/setup-miniconda@v4
         with:
           miniforge-version: "24.1.2-0"
           activate-environment: asv-bench
       - name: Install Requirements
         run: pip install -r requirements.txt
       - name: Cache Django
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: Django/*
           key: Django
