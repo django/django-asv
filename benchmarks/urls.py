@@ -45,3 +45,8 @@ urlpatterns.append(
 urlpatterns.append(
     path("", include("benchmarks.req_resp_benchmarks.http_methods.urls"))
 )
+
+# handler_call
+urlpatterns.append(
+    path("handler-call/", include("benchmarks.req_resp_benchmarks.handler_call.urls"))
+)
