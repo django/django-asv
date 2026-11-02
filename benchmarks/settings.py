@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "benchmarks.query_benchmarks.query_utils_q_create",
     "benchmarks.req_resp_benchmarks.default_middleware",
     "benchmarks.req_resp_benchmarks.http_methods",
+    "benchmarks.req_resp_benchmarks.limited_stream",
 ]
 
 SECRET_KEY = "NOT REALLY SECRET"
